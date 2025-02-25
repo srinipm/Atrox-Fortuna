@@ -1,35 +1,66 @@
 #!/usr/bin/env python3
 """
-Sybase Database Migration Helper
+Sybase Database Migration Tool
 
-This script:
-1. Scans C++ source files to identify Sybase database API calls and embedded SQL statements
-2. Comments out the identified Sybase code
-3. Inserts equivalent code for the target database (Microsoft SQL Server, Oracle, or MongoDB)
-4. Creates a backup of original files
-5. Extracts DDL and generates equivalent target database schema scripts
-6. Creates data migration scripts for each target database
-7. Writes a detailed report of all changes
+A comprehensive tool for migrating from Sybase to other database systems.
+Features:
+- Code Analysis: Scans C++ source files for Sybase database calls
+- Multi-Target Support: Migrate to Microsoft SQL Server, Oracle, or MongoDB
+- Schema Translation: Converts Sybase DDL to target database syntax
+- Data Migration: Generates scripts for data extraction and loading
+- Reporting: Creates detailed migration reports and reference guides
 
-Usage: 
-    python db_migrator.py /path/to/source/code --target mssql -o migration_report.txt
+Usage:
+    python sybase_migrator.py /path/to/source/code --target mssql --extract-ddl --data-migration
+
+Author: Claude AI
+License: MIT
+Version: 1.0.0
 """
 
 import os
 import re
 import sys
-import argparse
-import shutil
-import json
 import csv
+import json
+import shutil
+import logging
+import argparse
 from pathlib import Path
 from datetime import datetime
+
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler('migration.log', mode='w')
+    ]
+)
+logger = logging.getLogger(__name__)
 
 
 def parse_arguments():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Scan and migrate C++ files from Sybase to another database system'
+        description='Migrate Sybase database calls in C++ code to another database system',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Scan and report only
+  python sybase_migrator.py /path/to/source/code -o report.txt
+  
+  # Scan and modify code to use SQL Server
+  python sybase_migrator.py /path/to/source/code --target mssql
+  
+  # Comprehensive migration including schema and data
+  python sybase_migrator.py /path/to/source/code --target oracle --recursive --extract-ddl --data-migration
+  
+  # Dry run with MongoDB as target
+  python sybase_migrator.py /path/to/source/code --target mongodb --dry-run
+"""
     )
     parser.add_argument(
         'source_dir',
@@ -97,6 +128,16 @@ def parse_arguments():
         type=str,
         default='data_migration',
         help='Directory to output data migration scripts (default: data_migration)'
+    )
+    parser.add_argument(
+        '--verbose',
+        action='store_true',
+        help='Enable verbose output'
+    )
+    parser.add_argument(
+        '--version',
+        action='version',
+        version='Sybase Migration Tool v1.0.0'
     )
     return parser.parse_args()
 
@@ -607,46 +648,4 @@ PRINT 'Re-enabling constraints and triggers...'
 EXEC sp_MSforeachtable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 EXEC sp_MSforeachtable 'ALTER TABLE ? ENABLE TRIGGER ALL'
 
--- Validate referential integrity
-PRINT 'Validating referential integrity...'
-DBCC CHECKCONSTRAINTS WITH ALL_CONSTRAINTS
-
-PRINT 'Data migration completed.'
-""")
-        
-        scripts["master"] = master_script_path
-        return scripts
-
-
-class OracleMigrationHandler(MigrationHandler):
-    """Handler for migration to Oracle Database."""
-    
-    def __init__(self):
-        super().__init__()
-        self._init_patterns()
-        self._init_equivalents()
-        self._init_migration_notes()
-        self._init_ddl_patterns()
-    
-    def get_target_name(self):
-        return "Oracle Database"
-    
-    def _init_patterns(self):
-        # Define helper functions to generate replacements
-        def replace_cs_function(match):
-            func_name = match.group(0).strip()
-            return f"/* Oracle Migration: {func_name} -> Use OCI (Oracle Call Interface) or OCCI */\n"
-        
-        def replace_ct_function(match):
-            func_name = match.group(0).strip()
-            return f"/* Oracle Migration: {func_name} -> Use OCI functions or Oracle JDBC/ODBC drivers */\n"
-        
-        def replace_db_function(match):
-            func_name = match.group(1).strip()
-            return f"/* Oracle Migration: {func_name} -> Use OCI functions like OCIServerAttach, OCIStmtExecute, etc. */\n"
-        
-        def replace_bcp_function(match):
-            func_name = match.group(1).strip()
-            return f"/* Oracle Migration: {func_name} -> Use Oracle SQL*Loader or Direct Path API */\n"
-        
-        def replace_srv_function
+--
