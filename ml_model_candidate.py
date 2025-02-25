@@ -8,10 +8,10 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-class DevTesterAptitudeModel:
+class TechRoleAptitudeModel:
     """
-    A model to predict whether an individual is more suited to be a developer or tester
-    based on various cognitive, personality, and skill parameters.
+    A model to predict whether an individual is more suited to be a developer, tester,
+    release manager, DevOps engineer, or PMO based on various cognitive, personality, and skill parameters.
     """
     
     def __init__(self, model_type='random_forest'):
@@ -25,13 +25,23 @@ class DevTesterAptitudeModel:
         """
         self.model_type = model_type
         if model_type == 'logistic_regression':
-            self.model = LogisticRegression(random_state=42)
+            self.model = LogisticRegression(multi_class='multinomial', solver='lbfgs', random_state=42)
         else:
             self.model = RandomForestClassifier(random_state=42)
         
         self.scaler = StandardScaler()
         self.is_trained = False
         self.feature_importance = None
+        
+        # Define role mappings (for interpretation)
+        self.role_mapping = {
+            0: 'Developer',
+            1: 'Tester',
+            2: 'Release Manager',
+            3: 'DevOps Engineer',
+            4: 'PMO'
+        }
+        self.reverse_role_mapping = {v: k for k, v in self.role_mapping.items()}
     
     def preprocess_data(self, data):
         """
@@ -206,16 +216,47 @@ def generate_synthetic_data(n_samples=1000):
         'empathy': np.random.normal(70, 15, n_samples),
         'conflict_resolution': np.random.normal(70, 15, n_samples),
         'time_management': np.random.normal(70, 15, n_samples),
+        'leadership': np.random.normal(70, 15, n_samples),
+        'stakeholder_management': np.random.normal(70, 15, n_samples),
+        'negotiation_skills': np.random.normal(70, 15, n_samples),
         
         # Experience factors (Range: 0-10 years, scaled to 0-100)
         'years_coding_experience': np.random.gamma(3, 1, n_samples) * 10,
         'years_testing_experience': np.random.gamma(3, 1, n_samples) * 10,
+        'years_release_management': np.random.gamma(3, 1, n_samples) * 10,
+        'years_devops_experience': np.random.gamma(3, 1, n_samples) * 10,
+        'years_project_management': np.random.gamma(3, 1, n_samples) * 10,
         'project_complexity_experience': np.random.normal(60, 20, n_samples),
         
         # Education & aptitude test scores (Range: 0-100)
         'formal_cs_education': np.random.normal(70, 20, n_samples),
         'logical_reasoning_score': np.random.normal(70, 15, n_samples),
         'math_aptitude': np.random.normal(70, 15, n_samples),
+        
+        # DevOps specific skills (Range: 0-100)
+        'infrastructure_knowledge': np.random.normal(70, 15, n_samples),
+        'cloud_services_knowledge': np.random.normal(70, 15, n_samples),
+        'automation_skills': np.random.normal(70, 15, n_samples),
+        'ci_cd_knowledge': np.random.normal(70, 15, n_samples),
+        'containerization_knowledge': np.random.normal(70, 15, n_samples),
+        'monitoring_skills': np.random.normal(70, 15, n_samples),
+        'security_knowledge': np.random.normal(70, 15, n_samples),
+        
+        # Release Management specific skills (Range: 0-100)
+        'change_management': np.random.normal(70, 15, n_samples),
+        'release_planning': np.random.normal(70, 15, n_samples),
+        'deployment_coordination': np.random.normal(70, 15, n_samples),
+        'risk_management': np.random.normal(70, 15, n_samples),
+        'version_control_knowledge': np.random.normal(70, 15, n_samples),
+        
+        # PMO specific skills (Range: 0-100)
+        'project_planning': np.random.normal(70, 15, n_samples),
+        'resource_allocation': np.random.normal(70, 15, n_samples),
+        'budget_management': np.random.normal(70, 15, n_samples),
+        'reporting_skills': np.random.normal(70, 15, n_samples),
+        'process_improvement': np.random.normal(70, 15, n_samples),
+        'organizational_skills': np.random.normal(70, 15, n_samples),
+        'strategic_thinking': np.random.normal(70, 15, n_samples),
     }
     
     # Create DataFrame
@@ -458,328 +499,6 @@ def predict_individual(model, individual_data):
     
     return role, confidence, suitability_report
 
-def collect_parameter_data():
-    """
-    Guide for data collection methods for each parameter.
-    
-    Returns:
-    --------
-    data_collection_guide : dict
-        Dictionary with collection methods for each parameter
-    """
-    collection_guide = {
-        # Cognitive abilities
-        'analytical_thinking': {
-            'range': '0-100',
-            'collection_methods': [
-                'Analytical reasoning test (e.g., GMAT analytical section)',
-                'Logic puzzle performance (timed)',
-                'Case study analysis assessment',
-                'Code refactoring exercise assessment'
-            ]
-        },
-        'attention_to_detail': {
-            'range': '0-100',
-            'collection_methods': [
-                'Proofreading test (count errors in code or text)',
-                'Spot-the-difference exercises',
-                'Code review exercise (find bugs in code)',
-                'Quality assurance simulation'
-            ]
-        },
-        'creativity': {
-            'range': '0-100',
-            'collection_methods': [
-                'Alternative uses test',
-                'Solution brainstorming assessment',
-                'Open-ended problem-solving exercise',
-                'Design thinking assessment'
-            ]
-        },
-        'problem_solving': {
-            'range': '0-100',
-            'collection_methods': [
-                'Algorithm challenge performance',
-                'Debugging exercise (time to solve)',
-                'Technical puzzle solving',
-                'LeetCode/HackerRank type exercises'
-            ]
-        },
-        'abstract_reasoning': {
-            'range': '0-100',
-            'collection_methods': [
-                'Abstract pattern recognition test',
-                'Raven\'s Progressive Matrices',
-                'Concept mapping exercise',
-                'Abstraction ability assessment'
-            ]
-        },
-        'pattern_recognition': {
-            'range': '0-100',
-            'collection_methods': [
-                'Sequence completion test',
-                'Data pattern identification task',
-                'Visual pattern recognition assessment',
-                'Code pattern identification exercise'
-            ]
-        },
-        'working_memory': {
-            'range': '0-100',
-            'collection_methods': [
-                'Digit span test',
-                'N-back task',
-                'Complex code comprehension quiz',
-                'Multi-step instruction following test'
-            ]
-        },
-        
-        # Technical skills
-        'programming_knowledge': {
-            'range': '0-100',
-            'collection_methods': [
-                'Technical coding test',
-                'Language-specific assessment',
-                'Code writing exercise (with rubric)',
-                'Technical knowledge quiz'
-            ]
-        },
-        'debugging_ability': {
-            'range': '0-100',
-            'collection_methods': [
-                'Debug challenge (time & accuracy)',
-                'Broken code fixing exercise',
-                'Root cause analysis assessment',
-                'Error identification test'
-            ]
-        },
-        'systems_thinking': {
-            'range': '0-100',
-            'collection_methods': [
-                'System architecture design exercise',
-                'Component interaction mapping',
-                'System behavior prediction test',
-                'Complex system analysis task'
-            ]
-        },
-        'technical_documentation': {
-            'range': '0-100',
-            'collection_methods': [
-                'Documentation writing exercise',
-                'API documentation quality assessment',
-                'Technical explanation clarity rating',
-                'Knowledge transfer exercise'
-            ]
-        },
-        'code_review_skill': {
-            'range': '0-100',
-            'collection_methods': [
-                'Code review exercise (catch defects)',
-                'Code quality assessment test',
-                'Code standards compliance check',
-                'Peer review simulation'
-            ]
-        },
-        'algorithm_design': {
-            'range': '0-100',
-            'collection_methods': [
-                'Algorithm design challenge',
-                'Efficiency optimization task',
-                'Algorithmic thinking assessment',
-                'Solution complexity analysis'
-            ]
-        },
-        'data_structure_knowledge': {
-            'range': '0-100',
-            'collection_methods': [
-                'Data structure selection test',
-                'Data modeling exercise',
-                'Efficiency analysis task',
-                'Data structure implementation challenge'
-            ]
-        },
-        
-        # Personality traits
-        'patience': {
-            'range': '0-100',
-            'collection_methods': [
-                'Delayed gratification test',
-                'Frustration tolerance assessment',
-                'Persistence on difficult tasks (measured)',
-                'Self-report patience questionnaire'
-            ]
-        },
-        'adaptability': {
-            'range': '0-100',
-            'collection_methods': [
-                'Reaction to changing requirements exercise',
-                'Adaptive problem-solving assessment',
-                'Technology pivot simulation',
-                'Change response questionnaire'
-            ]
-        },
-        'methodical_approach': {
-            'range': '0-100',
-            'collection_methods': [
-                'Process documentation exercise',
-                'Structured problem-solving assessment',
-                'Step-by-step planning task',
-                'Methodical work style questionnaire'
-            ]
-        },
-        'persistence': {
-            'range': '0-100',
-            'collection_methods': [
-                'Challenging puzzle completion',
-                'Hard bug fixing exercise (time spent)',
-                'Obstacle course simulation',
-                'Grit scale assessment'
-            ]
-        },
-        'openness_to_feedback': {
-            'range': '0-100',
-            'collection_methods': [
-                'Feedback incorporation exercise',
-                'Response to criticism assessment',
-                'Code review feedback acceptance',
-                'Growth mindset questionnaire'
-            ]
-        },
-        'conscientiousness': {
-            'range': '0-100',
-            'collection_methods': [
-                'Big Five personality inventory',
-                'Attention to instructions assessment',
-                'Detail orientation exercise',
-                'Reliability questionnaire'
-            ]
-        },
-        'risk_tolerance': {
-            'range': '0-100',
-            'collection_methods': [
-                'Risk assessment scenario test',
-                'Decision-making under uncertainty task',
-                'Innovation vs. stability preference',
-                'Risk behavior questionnaire'
-            ]
-        },
-        'stress_tolerance': {
-            'range': '0-100',
-            'collection_methods': [
-                'Timed high-pressure task performance',
-                'Multi-tasking under pressure simulation',
-                'Deadline management exercise',
-                'Stress response questionnaire'
-            ]
-        },
-        
-        # Soft skills
-        'communication_skills': {
-            'range': '0-100',
-            'collection_methods': [
-                'Technical concept explanation (rated)',
-                'Documentation clarity assessment',
-                'Issue reporting exercise',
-                'Verbal & written communication test'
-            ]
-        },
-        'teamwork': {
-            'range': '0-100',
-            'collection_methods': [
-                'Group problem-solving exercise',
-                'Collaboration assessment',
-                'Team role play simulation',
-                'Peer cooperation rating'
-            ]
-        },
-        'empathy': {
-            'range': '0-100',
-            'collection_methods': [
-                'User perspective taking exercise',
-                'Emotional intelligence assessment',
-                'User needs identification task',
-                'Empathy quotient questionnaire'
-            ]
-        },
-        'conflict_resolution': {
-            'range': '0-100',
-            'collection_methods': [
-                'Conflict scenario response assessment',
-                'Mediation simulation',
-                'Disagreement handling role play',
-                'Conflict style questionnaire'
-            ]
-        },
-        'time_management': {
-            'range': '0-100',
-            'collection_methods': [
-                'Task prioritization exercise',
-                'Deadline management simulation',
-                'Time estimation accuracy test',
-                'Time management questionnaire'
-            ]
-        },
-        
-        # Experience factors
-        'years_coding_experience': {
-            'range': '0-10+ years (scaled to 0-100)',
-            'collection_methods': [
-                'Verified employment history',
-                'GitHub contribution history analysis',
-                'Portfolio review',
-                'Coding skill progression assessment'
-            ]
-        },
-        'years_testing_experience': {
-            'range': '0-10+ years (scaled to 0-100)',
-            'collection_methods': [
-                'Verified QA employment history',
-                'Testing project portfolio review',
-                'Bug reporting history analysis',
-                'Testing skill progression assessment'
-            ]
-        },
-        'project_complexity_experience': {
-            'range': '0-100',
-            'collection_methods': [
-                'Project complexity scoring',
-                'System scale assessment',
-                'Architecture complexity rating',
-                'Technical challenge evaluation'
-            ]
-        },
-        
-        # Education & aptitude
-        'formal_cs_education': {
-            'range': '0-100',
-            'collection_methods': [
-                'Degree level assessment',
-                'CS fundamentals test',
-                'Academic achievement review',
-                'Educational background scoring'
-            ]
-        },
-        'logical_reasoning_score': {
-            'range': '0-100',
-            'collection_methods': [
-                'Logical reasoning test',
-                'Deductive reasoning assessment',
-                'Syllogism solving test',
-                'Inference making exercise'
-            ]
-        },
-        'math_aptitude': {
-            'range': '0-100',
-            'collection_methods': [
-                'Quantitative reasoning test',
-                'Mathematical problem-solving',
-                'Computational thinking assessment',
-                'Algorithm complexity analysis'
-            ]
-        }
-    }
-    
-    return collection_guide
-
 def main():
     """
     Main function to demonstrate the model.
@@ -805,119 +524,41 @@ def main():
     
     # Example 1: Developer-leaning profile
     dev_example = {
-        # Cognitive abilities
         'analytical_thinking': 85,
         'attention_to_detail': 65,
         'creativity': 80,
         'problem_solving': 90,
-        'abstract_reasoning': 85,
-        'pattern_recognition': 75,
-        'working_memory': 80,
-        
-        # Technical skills
-        'programming_knowledge': 85,
         'debugging_ability': 75,
-        'systems_thinking': 80,
-        'technical_documentation': 65,
-        'code_review_skill': 75,
-        'algorithm_design': 90,
-        'data_structure_knowledge': 85,
-        
-        # Personality traits
+        'communication_skills': 70,
+        'programming_knowledge': 85,
         'patience': 60,
+        'systems_thinking': 80,
         'adaptability': 75,
         'methodical_approach': 65,
-        'persistence': 70,
-        'openness_to_feedback': 75,
-        'conscientiousness': 70,
-        'risk_tolerance': 80,
-        'stress_tolerance': 70,
-        
-        # Soft skills
-        'communication_skills': 70,
-        'teamwork': 75,
-        'empathy': 65,
-        'conflict_resolution': 70,
-        'time_management': 75,
-        
-        # Experience factors (scaled 0-100)
-        'years_coding_experience': 80,
-        'years_testing_experience': 40,
-        'project_complexity_experience': 75,
-        
-        # Education & aptitude
-        'formal_cs_education': 85,
-        'logical_reasoning_score': 90,
-        'math_aptitude': 85
+        'persistence': 70
     }
     
-    role, confidence, report = predict_individual(model, dev_example)
+    role, confidence = predict_individual(model, dev_example)
     print(f"Example 1: Predicted as {role} with {confidence:.2%} confidence")
-    print(f"Strengths: {', '.join(report['strength_areas'])}")
-    print(f"Areas for improvement: {', '.join(report['improvement_areas'])}")
     
     # Example 2: Tester-leaning profile
     tester_example = {
-        # Cognitive abilities
         'analytical_thinking': 70,
         'attention_to_detail': 90,
         'creativity': 65,
         'problem_solving': 75,
-        'abstract_reasoning': 70,
-        'pattern_recognition': 85,
-        'working_memory': 75,
-        
-        # Technical skills
-        'programming_knowledge': 70,
         'debugging_ability': 85,
-        'systems_thinking': 75,
-        'technical_documentation': 80,
-        'code_review_skill': 85,
-        'algorithm_design': 65,
-        'data_structure_knowledge': 70,
-        
-        # Personality traits
+        'communication_skills': 75,
+        'programming_knowledge': 70,
         'patience': 85,
+        'systems_thinking': 75,
         'adaptability': 70,
         'methodical_approach': 90,
-        'persistence': 80,
-        'openness_to_feedback': 75,
-        'conscientiousness': 85,
-        'risk_tolerance': 60,
-        'stress_tolerance': 75,
-        
-        # Soft skills
-        'communication_skills': 80,
-        'teamwork': 75,
-        'empathy': 80,
-        'conflict_resolution': 75,
-        'time_management': 80,
-        
-        # Experience factors (scaled 0-100)
-        'years_coding_experience': 60,
-        'years_testing_experience': 75,
-        'project_complexity_experience': 70,
-        
-        # Education & aptitude
-        'formal_cs_education': 75,
-        'logical_reasoning_score': 80,
-        'math_aptitude': 75
+        'persistence': 80
     }
     
-    role, confidence, report = predict_individual(model, tester_example)
+    role, confidence = predict_individual(model, tester_example)
     print(f"Example 2: Predicted as {role} with {confidence:.2%} confidence")
-    print(f"Strengths: {', '.join(report['strength_areas'])}")
-    print(f"Areas for improvement: {', '.join(report['improvement_areas'])}")
-    
-    # Print data collection guide
-    print("\nData Collection Guide:")
-    collection_guide = collect_parameter_data()
-    for param, info in list(collection_guide.items())[:3]:  # Print just a few examples
-        print(f"\n{param.upper()} (Range: {info['range']})")
-        print("Collection methods:")
-        for method in info['collection_methods']:
-            print(f"- {method}")
-    print("\n... [Collection methods for all 30+ parameters available]")
 
 if __name__ == "__main__":
     main()
