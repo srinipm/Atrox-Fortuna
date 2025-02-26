@@ -1,564 +1,562 @@
-import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, classification_report, mean_squared_error, r2_score
+from sklearn.multioutput import MultiOutputRegressor
+import joblib
+import pickle
 
-class TechRoleAptitudeModel:
+
+class ITCandidateML:
     """
-    A model to predict whether an individual is more suited to be a developer, tester,
-    release manager, DevOps engineer, or PMO based on various cognitive, personality, and skill parameters.
+    ML-based IT candidate evaluation system that learns from historical data
+    to predict role suitability for production support, maintenance, and new development.
     """
     
-    def __init__(self, model_type='random_forest'):
+    def __init__(self, model_type='classification'):
         """
-        Initialize the model.
+        Initialize the ML model for IT candidate evaluation.
         
-        Parameters:
-        -----------
-        model_type : str
-            Type of model to use ('logistic_regression' or 'random_forest')
+        Args:
+            model_type (str): Either 'classification' or 'regression'
         """
         self.model_type = model_type
-        if model_type == 'logistic_regression':
-            self.model = LogisticRegression(multi_class='multinomial', solver='lbfgs', random_state=42)
-        else:
-            self.model = RandomForestClassifier(random_state=42)
+        self.feature_columns = [
+            'technical_knowledge', 'communication_skills', 'problem_solving',
+            'team_collaboration', 'enterprise_experience', 'stress_management',
+            'response_time', 'documentation_skills', 'system_knowledge',
+            'innovation_capability', 'learning_agility', 'code_quality',
+            'architecture_understanding'
+        ]
         
+        # For classification, define classes
+        self.role_classes = ['Production Support', 'Maintenance', 'New Development']
+        
+        # For regression, define target columns
+        self.target_columns = ['ps_score', 'm_score', 'nd_score']
+        
+        # Initialize preprocessing
         self.scaler = StandardScaler()
-        self.is_trained = False
-        self.feature_importance = None
         
-        # Define role mappings (for interpretation)
-        self.role_mapping = {
-            0: 'Developer',
-            1: 'Tester',
-            2: 'Release Manager',
-            3: 'DevOps Engineer',
-            4: 'PMO'
-        }
-        self.reverse_role_mapping = {v: k for k, v in self.role_mapping.items()}
+        # Initialize models
+        if model_type == 'classification':
+            # Model to predict the most suitable role
+            self.model = RandomForestClassifier(n_estimators=100, random_state=42)
+        else:
+            # Model to predict scores for all three roles
+            base_regressor = RandomForestRegressor(n_estimators=100, random_state=42)
+            self.model = MultiOutputRegressor(base_regressor)
     
-    def preprocess_data(self, data):
+    def generate_synthetic_training_data(self, n_samples=1000):
         """
-        Preprocess the input data.
+        Generate synthetic training data based on domain knowledge.
+        In a real-world scenario, this would be replaced with historical data.
         
-        Parameters:
-        -----------
-        data : pandas.DataFrame
-            Input data with features and target variable
+        Args:
+            n_samples: Number of synthetic samples to generate
             
         Returns:
-        --------
-        X : numpy.ndarray
-            Scaled feature matrix
-        y : numpy.ndarray
-            Target variable array
+            DataFrame containing synthetic training data
         """
-        # Separate features and target
-        X = data.drop('role_preference', axis=1)
-        y = data['role_preference']
+        np.random.seed(42)  # For reproducibility
         
-        # Scale the features
-        X_scaled = self.scaler.fit_transform(X)
+        # Generate random scores for each parameter
+        data = {}
+        for feature in self.feature_columns:
+            data[feature] = np.random.uniform(1, 10, n_samples)
         
-        return X_scaled, y
-    
-    def train(self, data, test_size=0.2):
-        """
-        Train the model on the provided data.
+        df = pd.DataFrame(data)
         
-        Parameters:
-        -----------
-        data : pandas.DataFrame
-            Training data with features and target variable
-        test_size : float
-            Proportion of data to use for testing
-            
-        Returns:
-        --------
-        accuracy : float
-            Model accuracy on test data
-        """
-        X, y = self.preprocess_data(data)
-        
-        # Split into training and testing sets
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=test_size, random_state=42
+        # Calculate 'ground truth' scores based on our original weighted formulas
+        # Production Support score
+        df['ps_score'] = (
+            0.15 * df['technical_knowledge'] +
+            0.15 * df['communication_skills'] +
+            0.15 * df['problem_solving'] +
+            0.05 * df['team_collaboration'] +
+            0.10 * df['enterprise_experience'] +
+            0.15 * df['stress_management'] +
+            0.15 * df['response_time'] +
+            0.10 * df['system_knowledge']
         )
         
-        # Train the model
-        self.model.fit(X_train, y_train)
-        self.is_trained = True
+        # Maintenance score
+        df['m_score'] = (
+            0.15 * df['technical_knowledge'] +
+            0.10 * df['communication_skills'] +
+            0.15 * df['problem_solving'] +
+            0.10 * df['team_collaboration'] +
+            0.15 * df['enterprise_experience'] +
+            0.05 * df['stress_management'] +
+            0.10 * df['documentation_skills'] +
+            0.20 * df['system_knowledge']
+        )
         
-        # Calculate feature importance
-        if self.model_type == 'random_forest':
-            self.feature_importance = self.model.feature_importances_
-        else:
-            self.feature_importance = np.abs(self.model.coef_[0])
+        # New Development score
+        df['nd_score'] = (
+            0.15 * df['technical_knowledge'] +
+            0.10 * df['communication_skills'] +
+            0.15 * df['problem_solving'] +
+            0.10 * df['team_collaboration'] +
+            0.05 * df['enterprise_experience'] +
+            0.15 * df['innovation_capability'] +
+            0.10 * df['learning_agility'] +
+            0.10 * df['code_quality'] +
+            0.10 * df['architecture_understanding']
+        )
         
-        # Evaluate on test data
-        y_pred = self.model.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
+        # Add some random noise to make it more realistic
+        df['ps_score'] += np.random.normal(0, 0.2, n_samples)
+        df['m_score'] += np.random.normal(0, 0.2, n_samples)
+        df['nd_score'] += np.random.normal(0, 0.2, n_samples)
         
-        self.report = classification_report(y_test, y_pred)
-        self.conf_matrix = confusion_matrix(y_test, y_pred)
+        # Clip scores to 0-10 range
+        df['ps_score'] = np.clip(df['ps_score'], 0, 10)
+        df['m_score'] = np.clip(df['m_score'], 0, 10)
+        df['nd_score'] = np.clip(df['nd_score'], 0, 10)
         
-        return accuracy
+        # For classification, determine the most suitable role
+        df['best_role'] = df[['ps_score', 'm_score', 'nd_score']].idxmax(axis=1)
+        df['best_role'] = df['best_role'].map({
+            'ps_score': 'Production Support',
+            'm_score': 'Maintenance', 
+            'nd_score': 'New Development'
+        })
+        
+        return df
     
-    def predict(self, features):
+    def preprocess_data(self, X):
+        """Scale the features"""
+        return self.scaler.transform(X)
+    
+    def train(self, data=None, hyperparameter_tuning=False):
         """
-        Predict the role suitability for new individuals.
+        Train the ML model using either provided data or synthetic data.
         
-        Parameters:
-        -----------
-        features : pandas.DataFrame or numpy.ndarray
-            Features of new individuals
+        Args:
+            data (DataFrame, optional): Training data. If None, synthetic data is generated.
+            hyperparameter_tuning (bool): Whether to perform grid search for optimal parameters
+        """
+        if data is None:
+            data = self.generate_synthetic_training_data()
+        
+        # Extract features and targets
+        X = data[self.feature_columns]
+        
+        if self.model_type == 'classification':
+            y = data['best_role']
+        else:
+            y = data[self.target_columns]
+        
+        # Split data
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        
+        # Scale features
+        self.scaler.fit(X_train)
+        X_train_scaled = self.scaler.transform(X_train)
+        X_test_scaled = self.scaler.transform(X_test)
+        
+        # Hyperparameter tuning if requested
+        if hyperparameter_tuning:
+            self._perform_hyperparameter_tuning(X_train_scaled, y_train)
+        
+        # Train the model
+        self.model.fit(X_train_scaled, y_train)
+        
+        # Evaluate the model
+        if self.model_type == 'classification':
+            y_pred = self.model.predict(X_test_scaled)
+            accuracy = accuracy_score(y_test, y_pred)
+            report = classification_report(y_test, y_pred)
+            
+            print(f"Model Accuracy: {accuracy:.4f}")
+            print("Classification Report:")
+            print(report)
+            
+        else:  # Regression
+            y_pred = self.model.predict(X_test_scaled)
+            mse = [mean_squared_error(y_test[col], y_pred[:, i]) 
+                  for i, col in enumerate(self.target_columns)]
+            r2 = [r2_score(y_test[col], y_pred[:, i]) 
+                 for i, col in enumerate(self.target_columns)]
+            
+            for i, role in enumerate(self.target_columns):
+                print(f"{role} - MSE: {mse[i]:.4f}, R²: {r2[i]:.4f}")
+        
+        # Save feature importance
+        if hasattr(self.model, 'feature_importances_'):
+            self._analyze_feature_importance(X.columns)
+        elif hasattr(self.model, 'estimators_'):
+            for i, est in enumerate(self.model.estimators_):
+                if hasattr(est, 'feature_importances_'):
+                    print(f"\nFeature importance for {self.target_columns[i]}:")
+                    self._analyze_feature_importance(X.columns, est.feature_importances_)
+    
+    def _perform_hyperparameter_tuning(self, X_train, y_train):
+        """Perform grid search for optimal hyperparameters"""
+        if self.model_type == 'classification':
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'max_depth': [None, 10, 20],
+                'min_samples_split': [2, 5, 10]
+            }
+            grid_search = GridSearchCV(
+                RandomForestClassifier(random_state=42),
+                param_grid,
+                cv=5,
+                scoring='accuracy'
+            )
+        else:
+            base_regressor = RandomForestRegressor(random_state=42)
+            param_grid = {
+                'estimator__n_estimators': [50, 100, 200],
+                'estimator__max_depth': [None, 10, 20],
+                'estimator__min_samples_split': [2, 5, 10]
+            }
+            grid_search = GridSearchCV(
+                MultiOutputRegressor(base_regressor),
+                param_grid,
+                cv=5,
+                scoring='neg_mean_squared_error'
+            )
+        
+        grid_search.fit(X_train, y_train)
+        print(f"Best parameters: {grid_search.best_params_}")
+        self.model = grid_search.best_estimator_
+    
+    def _analyze_feature_importance(self, feature_names, importances=None):
+        """Analyze and visualize feature importance"""
+        if importances is None:
+            if hasattr(self.model, 'feature_importances_'):
+                importances = self.model.feature_importances_
+            else:
+                return
+        
+        # Create a dataframe of feature importances
+        feature_importance = pd.DataFrame({
+            'Feature': feature_names,
+            'Importance': importances
+        }).sort_values(by='Importance', ascending=False)
+        
+        print("Feature Importance:")
+        print(feature_importance)
+        
+        # Visualize feature importance
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x='Importance', y='Feature', data=feature_importance)
+        plt.title('Feature Importance')
+        plt.tight_layout()
+        plt.savefig('feature_importance.png')
+    
+    def predict_role(self, candidate_data):
+        """
+        Predict the most suitable role for a candidate.
+        
+        Args:
+            candidate_data: Dictionary or DataFrame with candidate parameters
             
         Returns:
-        --------
-        predictions : numpy.ndarray
-            Predicted roles (0 for developer, 1 for tester)
-        probabilities : numpy.ndarray
-            Probability of each class
+            Dictionary with prediction results
         """
-        if not self.is_trained:
-            raise Exception("Model is not trained yet. Call train() first.")
-        
-        # Scale the features
-        if isinstance(features, pd.DataFrame):
-            features_scaled = self.scaler.transform(features)
+        if isinstance(candidate_data, dict):
+            # Convert single candidate dictionary to DataFrame
+            df = pd.DataFrame([candidate_data])
         else:
-            features_scaled = self.scaler.transform(features.reshape(1, -1))
+            df = candidate_data.copy()
         
-        # Make predictions
-        predictions = self.model.predict(features_scaled)
-        probabilities = self.model.predict_proba(features_scaled)
+        # Ensure all required features are present
+        for feature in self.feature_columns:
+            if feature not in df.columns:
+                raise ValueError(f"Missing required feature: {feature}")
         
-        return predictions, probabilities
+        # Extract features in the correct order
+        X = df[self.feature_columns]
+        
+        # Scale features
+        X_scaled = self.scaler.transform(X)
+        
+        if self.model_type == 'classification':
+            # Predict the most suitable role
+            role_prediction = self.model.predict(X_scaled)
+            role_probs = self.model.predict_proba(X_scaled)
+            
+            # Create result dictionary for each candidate
+            results = []
+            for i, prediction in enumerate(role_prediction):
+                result = {
+                    'predicted_role': prediction,
+                    'confidence': {
+                        self.role_classes[j]: prob 
+                        for j, prob in enumerate(role_probs[i])
+                    }
+                }
+                results.append(result)
+            
+        else:  # Regression
+            # Predict scores for all three roles
+            scores = self.model.predict(X_scaled)
+            
+            # Create result dictionary for each candidate
+            results = []
+            for i in range(len(X)):
+                # Get predicted scores
+                ps_score, m_score, nd_score = scores[i]
+                
+                # Determine the most suitable role based on highest score
+                roles = ['Production Support', 'Maintenance', 'New Development']
+                role_scores = [ps_score, m_score, nd_score]
+                best_role_idx = np.argmax(role_scores)
+                
+                # Get fitness level
+                def get_fitness_level(score):
+                    if score >= 8.5:
+                        return "Excellent fit"
+                    elif score >= 7.0:
+                        return "Strong fit"
+                    elif score >= 5.5:
+                        return "Moderate fit"
+                    elif score >= 4.0:
+                        return "Weak fit"
+                    else:
+                        return "Poor fit"
+                
+                result = {
+                    'Production Support': {
+                        'score': round(ps_score, 2),
+                        'classification': get_fitness_level(ps_score)
+                    },
+                    'Maintenance': {
+                        'score': round(m_score, 2),
+                        'classification': get_fitness_level(m_score)
+                    },
+                    'New Development': {
+                        'score': round(nd_score, 2),
+                        'classification': get_fitness_level(nd_score)
+                    },
+                    'Most Suitable Role': roles[best_role_idx]
+                }
+                
+                # Check for versatility
+                max_score = max(role_scores)
+                close_roles = [role for role, score in zip(roles, role_scores) 
+                              if abs(score - max_score) <= 0.5]
+                
+                if len(close_roles) > 1:
+                    result['Versatility'] = "Versatile: Suitable for multiple roles"
+                else:
+                    result['Versatility'] = f"Specialized: Best suited for {roles[best_role_idx]}"
+                
+                results.append(result)
+        
+        # If single candidate, return just the first result
+        if len(results) == 1:
+            return results[0]
+        return results
     
-    def visualize_feature_importance(self, feature_names):
+    def visualize_prediction(self, candidate_name, prediction):
         """
-        Visualize the importance of each feature in the model.
+        Generate a visualization of the prediction results.
         
-        Parameters:
-        -----------
-        feature_names : list
-            Names of the features
+        Args:
+            candidate_name: Name of the candidate
+            prediction: Prediction dictionary from predict_role method
+            
+        Returns:
+            Matplotlib figure
         """
-        if not self.is_trained:
-            raise Exception("Model is not trained yet. Call train() first.")
+        if self.model_type == 'classification':
+            # For classification, create a bar chart of confidence scores
+            roles = list(prediction['confidence'].keys())
+            confidence = list(prediction['confidence'].values())
+            
+            plt.figure(figsize=(10, 6))
+            bars = plt.bar(roles, confidence, color=['#3498db', '#2ecc71', '#e74c3c'])
+            
+            # Highlight the predicted role
+            predicted_idx = roles.index(prediction['predicted_role']) if prediction['predicted_role'] in roles else -1
+            if predicted_idx >= 0:
+                bars[predicted_idx].set_color('gold')
+                bars[predicted_idx].set_edgecolor('black')
+            
+            plt.ylim(0, 1)
+            plt.xlabel('IT Roles')
+            plt.ylabel('Confidence Score (0-1)')
+            plt.title(f'ML Prediction: Role Suitability for {candidate_name}')
+            
+            # Add score labels on top of bars
+            for bar, score in zip(bars, confidence):
+                plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.02,
+                        f"{score:.2f}", ha='center', va='bottom')
+            
+        else:  # Regression
+            # For regression, create a bar chart of predicted scores
+            roles = ["Production Support", "Maintenance", "New Development"]
+            scores = [prediction[role]['score'] for role in roles]
+            
+            plt.figure(figsize=(10, 6))
+            bars = plt.bar(roles, scores, color=['#3498db', '#2ecc71', '#e74c3c'])
+            
+            # Highlight the predicted role
+            predicted_idx = roles.index(prediction['Most Suitable Role'])
+            bars[predicted_idx].set_color('gold')
+            bars[predicted_idx].set_edgecolor('black')
+            
+            plt.ylim(0, 10)
+            plt.xlabel('IT Roles')
+            plt.ylabel('Predicted Suitability Score (0-10)')
+            plt.title(f'ML Prediction: Role Suitability for {candidate_name}')
+            
+            # Add score labels on top of bars
+            for bar, score in zip(bars, scores):
+                plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
+                        str(score), ha='center', va='bottom')
+                
+            # Add classification labels
+            for i, role in enumerate(roles):
+                plt.text(i, scores[i] - 0.5, prediction[role]['classification'],
+                        ha='center', va='bottom', color='white', fontweight='bold')
         
-        # Sort features by importance
-        indices = np.argsort(self.feature_importance)[::-1]
-        
-        plt.figure(figsize=(12, 8))
-        plt.title('Feature Importance for Developer vs Tester Prediction')
-        plt.bar(range(len(indices)), self.feature_importance[indices], align='center')
-        plt.xticks(range(len(indices)), [feature_names[i] for i in indices], rotation=90)
         plt.tight_layout()
-        
         return plt
+    
+    def save_model(self, filename='it_candidate_ml_model'):
+        """Save the trained model, scaler, and metadata"""
+        model_data = {
+            'model': self.model,
+            'scaler': self.scaler,
+            'model_type': self.model_type,
+            'feature_columns': self.feature_columns,
+            'role_classes': self.role_classes,
+            'target_columns': self.target_columns
+        }
+        
+        with open(f"{filename}.pkl", 'wb') as f:
+            pickle.dump(model_data, f)
+        
+        print(f"Model saved to {filename}.pkl")
+    
+    @classmethod
+    def load_model(cls, filename='it_candidate_ml_model.pkl'):
+        """Load a saved model"""
+        with open(filename, 'rb') as f:
+            model_data = pickle.load(f)
+        
+        # Create a new instance
+        instance = cls(model_type=model_data['model_type'])
+        
+        # Restore the model attributes
+        instance.model = model_data['model']
+        instance.scaler = model_data['scaler']
+        instance.feature_columns = model_data['feature_columns']
+        instance.role_classes = model_data['role_classes']
+        instance.target_columns = model_data['target_columns']
+        
+        return instance
 
-def generate_synthetic_data(n_samples=1000):
-    """
-    Generate synthetic data for model demonstration.
-    
-    Parameters:
-    -----------
-    n_samples : int
-        Number of samples to generate
-        
-    Returns:
-    --------
-    data : pandas.DataFrame
-        Synthetic data with features and target variable
-    """
-    np.random.seed(42)
-    
-    # Define parameters and their distributions
-    parameters = {
-        # Cognitive abilities (Range: 0-100)
-        'analytical_thinking': np.random.normal(70, 15, n_samples),
-        'attention_to_detail': np.random.normal(70, 15, n_samples),
-        'creativity': np.random.normal(70, 15, n_samples),
-        'problem_solving': np.random.normal(70, 15, n_samples),
-        'abstract_reasoning': np.random.normal(70, 15, n_samples),
-        'pattern_recognition': np.random.normal(70, 15, n_samples),
-        'working_memory': np.random.normal(70, 15, n_samples),
-        
-        # Technical skills (Range: 0-100)
-        'programming_knowledge': np.random.normal(70, 15, n_samples),
-        'debugging_ability': np.random.normal(70, 15, n_samples),
-        'systems_thinking': np.random.normal(70, 15, n_samples),
-        'technical_documentation': np.random.normal(70, 15, n_samples),
-        'code_review_skill': np.random.normal(70, 15, n_samples),
-        'algorithm_design': np.random.normal(70, 15, n_samples),
-        'data_structure_knowledge': np.random.normal(70, 15, n_samples),
-        
-        # Personality traits (Range: 0-100)
-        'patience': np.random.normal(70, 15, n_samples),
-        'adaptability': np.random.normal(70, 15, n_samples),
-        'methodical_approach': np.random.normal(70, 15, n_samples),
-        'persistence': np.random.normal(70, 15, n_samples),
-        'openness_to_feedback': np.random.normal(70, 15, n_samples),
-        'conscientiousness': np.random.normal(70, 15, n_samples),
-        'risk_tolerance': np.random.normal(70, 15, n_samples),
-        'stress_tolerance': np.random.normal(70, 15, n_samples),
-        
-        # Soft skills (Range: 0-100)
-        'communication_skills': np.random.normal(70, 15, n_samples),
-        'teamwork': np.random.normal(70, 15, n_samples),
-        'empathy': np.random.normal(70, 15, n_samples),
-        'conflict_resolution': np.random.normal(70, 15, n_samples),
-        'time_management': np.random.normal(70, 15, n_samples),
-        'leadership': np.random.normal(70, 15, n_samples),
-        'stakeholder_management': np.random.normal(70, 15, n_samples),
-        'negotiation_skills': np.random.normal(70, 15, n_samples),
-        
-        # Experience factors (Range: 0-10 years, scaled to 0-100)
-        'years_coding_experience': np.random.gamma(3, 1, n_samples) * 10,
-        'years_testing_experience': np.random.gamma(3, 1, n_samples) * 10,
-        'years_release_management': np.random.gamma(3, 1, n_samples) * 10,
-        'years_devops_experience': np.random.gamma(3, 1, n_samples) * 10,
-        'years_project_management': np.random.gamma(3, 1, n_samples) * 10,
-        'project_complexity_experience': np.random.normal(60, 20, n_samples),
-        
-        # Education & aptitude test scores (Range: 0-100)
-        'formal_cs_education': np.random.normal(70, 20, n_samples),
-        'logical_reasoning_score': np.random.normal(70, 15, n_samples),
-        'math_aptitude': np.random.normal(70, 15, n_samples),
-        
-        # DevOps specific skills (Range: 0-100)
-        'infrastructure_knowledge': np.random.normal(70, 15, n_samples),
-        'cloud_services_knowledge': np.random.normal(70, 15, n_samples),
-        'automation_skills': np.random.normal(70, 15, n_samples),
-        'ci_cd_knowledge': np.random.normal(70, 15, n_samples),
-        'containerization_knowledge': np.random.normal(70, 15, n_samples),
-        'monitoring_skills': np.random.normal(70, 15, n_samples),
-        'security_knowledge': np.random.normal(70, 15, n_samples),
-        
-        # Release Management specific skills (Range: 0-100)
-        'change_management': np.random.normal(70, 15, n_samples),
-        'release_planning': np.random.normal(70, 15, n_samples),
-        'deployment_coordination': np.random.normal(70, 15, n_samples),
-        'risk_management': np.random.normal(70, 15, n_samples),
-        'version_control_knowledge': np.random.normal(70, 15, n_samples),
-        
-        # PMO specific skills (Range: 0-100)
-        'project_planning': np.random.normal(70, 15, n_samples),
-        'resource_allocation': np.random.normal(70, 15, n_samples),
-        'budget_management': np.random.normal(70, 15, n_samples),
-        'reporting_skills': np.random.normal(70, 15, n_samples),
-        'process_improvement': np.random.normal(70, 15, n_samples),
-        'organizational_skills': np.random.normal(70, 15, n_samples),
-        'strategic_thinking': np.random.normal(70, 15, n_samples),
-    }
-    
-    # Create DataFrame
-    data = pd.DataFrame(parameters)
-    
-    # Clip values to be between 0 and 100
-    for col in data.columns:
-        data[col] = np.clip(data[col], 0, 100)
-    
-    # Define more comprehensive rules for role preference
-    # Developers tend to have higher scores in certain areas
-    dev_score = (
-        # Cognitive abilities
-        1.5 * data['analytical_thinking'] +
-        0.8 * data['attention_to_detail'] +
-        1.4 * data['creativity'] +
-        1.5 * data['problem_solving'] +
-        1.3 * data['abstract_reasoning'] +
-        1.1 * data['pattern_recognition'] +
-        1.0 * data['working_memory'] +
-        
-        # Technical skills
-        1.7 * data['programming_knowledge'] +
-        1.0 * data['debugging_ability'] +
-        1.3 * data['systems_thinking'] +
-        0.7 * data['technical_documentation'] +
-        1.2 * data['code_review_skill'] +
-        1.6 * data['algorithm_design'] +
-        1.5 * data['data_structure_knowledge'] +
-        
-        # Personality traits
-        0.6 * data['patience'] +
-        1.0 * data['adaptability'] +
-        0.7 * data['methodical_approach'] +
-        0.9 * data['persistence'] +
-        0.8 * data['openness_to_feedback'] +
-        0.9 * data['conscientiousness'] +
-        1.2 * data['risk_tolerance'] +
-        0.8 * data['stress_tolerance'] +
-        
-        # Soft skills
-        0.8 * data['communication_skills'] +
-        0.7 * data['teamwork'] +
-        0.6 * data['empathy'] +
-        0.7 * data['conflict_resolution'] +
-        0.9 * data['time_management'] +
-        
-        # Experience & Education
-        1.3 * data['years_coding_experience'] +
-        0.4 * data['years_testing_experience'] +
-        1.0 * data['project_complexity_experience'] +
-        1.1 * data['formal_cs_education'] +
-        1.2 * data['logical_reasoning_score'] +
-        1.4 * data['math_aptitude']
-    )
-    
-    # Testers tend to have higher scores in certain areas
-    tester_score = (
-        # Cognitive abilities
-        1.0 * data['analytical_thinking'] +
-        1.8 * data['attention_to_detail'] +
-        0.9 * data['creativity'] +
-        1.2 * data['problem_solving'] +
-        0.9 * data['abstract_reasoning'] +
-        1.4 * data['pattern_recognition'] +
-        1.1 * data['working_memory'] +
-        
-        # Technical skills
-        0.9 * data['programming_knowledge'] +
-        1.7 * data['debugging_ability'] +
-        1.1 * data['systems_thinking'] +
-        1.3 * data['technical_documentation'] +
-        1.4 * data['code_review_skill'] +
-        0.7 * data['algorithm_design'] +
-        0.8 * data['data_structure_knowledge'] +
-        
-        # Personality traits
-        1.5 * data['patience'] +
-        0.9 * data['adaptability'] +
-        1.6 * data['methodical_approach'] +
-        1.3 * data['persistence'] +
-        1.1 * data['openness_to_feedback'] +
-        1.4 * data['conscientiousness'] +
-        0.7 * data['risk_tolerance'] +
-        1.1 * data['stress_tolerance'] +
-        
-        # Soft skills
-        1.2 * data['communication_skills'] +
-        1.0 * data['teamwork'] +
-        1.1 * data['empathy'] +
-        1.0 * data['conflict_resolution'] +
-        1.2 * data['time_management'] +
-        
-        # Experience & Education
-        0.7 * data['years_coding_experience'] +
-        1.5 * data['years_testing_experience'] +
-        0.9 * data['project_complexity_experience'] +
-        0.8 * data['formal_cs_education'] +
-        1.0 * data['logical_reasoning_score'] +
-        0.9 * data['math_aptitude']
-    )
-    
-    # Add some noise to make the data more realistic
-    noise = np.random.normal(0, 50, n_samples)
-    dev_score += noise
-    tester_score -= noise
-    
-    # Assign role preference (0 for developer, 1 for tester)
-    data['role_preference'] = (tester_score > dev_score).astype(int)
-    
-    return data
 
-def evaluate_model(data, model_type='random_forest'):
-    """
-    Evaluate the model on the provided data.
-    
-    Parameters:
-    -----------
-    data : pandas.DataFrame
-        Data to evaluate the model on
-    model_type : str
-        Type of model to use
-        
-    Returns:
-    --------
-    model : DevTesterAptitudeModel
-        Trained model
-    accuracy : float
-        Model accuracy
-    """
-    # Create and train the model
-    model = DevTesterAptitudeModel(model_type=model_type)
-    accuracy = model.train(data)
-    
-    # Print evaluation metrics
-    print(f"Model: {model_type}")
-    print(f"Accuracy: {accuracy:.4f}")
-    print("\nClassification Report:")
-    print(model.report)
-    
-    # Print confusion matrix
-    print("\nConfusion Matrix:")
-    print(model.conf_matrix)
-    
-    # Visualize feature importance
-    plt = model.visualize_feature_importance(data.drop('role_preference', axis=1).columns)
-    plt.show()
-    
-    return model, accuracy
-
-def predict_individual(model, individual_data):
-    """
-    Predict the role suitability for a new individual.
-    
-    Parameters:
-    -----------
-    model : DevTesterAptitudeModel
-        Trained model
-    individual_data : dict
-        Dictionary with individual's parameter values
-        
-    Returns:
-    --------
-    role : str
-        Predicted role ('Developer' or 'Tester')
-    confidence : float
-        Confidence in the prediction (probability)
-    suitability_report : dict
-        Detailed breakdown of suitability for each role
-    """
-    # Convert individual data to DataFrame
-    df = pd.DataFrame([individual_data])
-    
-    # Make prediction
-    pred, prob = model.predict(df)
-    
-    # Get the result
-    if pred[0] == 0:
-        role = 'Developer'
-        confidence = prob[0][0]
-    else:
-        role = 'Tester'
-        confidence = prob[0][1]
-    
-    # Create a more detailed suitability report
-    suitability_report = {
-        'primary_role': role,
-        'confidence': confidence,
-        'developer_probability': prob[0][0],
-        'tester_probability': prob[0][1],
-        'strength_areas': [],
-        'improvement_areas': []
-    }
-    
-    # Identify strengths and areas for improvement based on parameter thresholds
-    developer_params = ['analytical_thinking', 'creativity', 'problem_solving', 
-                        'programming_knowledge', 'algorithm_design', 'data_structure_knowledge',
-                        'abstract_reasoning', 'risk_tolerance', 'years_coding_experience', 'math_aptitude']
-    
-    tester_params = ['attention_to_detail', 'patience', 'methodical_approach', 
-                    'debugging_ability', 'technical_documentation', 'code_review_skill',
-                    'persistence', 'conscientiousness', 'years_testing_experience', 'pattern_recognition']
-    
-    common_params = ['systems_thinking', 'communication_skills', 'teamwork', 
-                    'stress_tolerance', 'time_management', 'openness_to_feedback']
-    
-    # Set thresholds for strengths and improvements
-    strength_threshold = 80
-    improvement_threshold = 60
-    
-    # Check which role is primary
-    if role == 'Developer':
-        # For developers, check developer params as strengths
-        for param in developer_params:
-            if param in individual_data and individual_data[param] >= strength_threshold:
-                suitability_report['strength_areas'].append(param)
-            elif param in individual_data and individual_data[param] < improvement_threshold:
-                suitability_report['improvement_areas'].append(param)
-                
-        # Check common params
-        for param in common_params:
-            if param in individual_data and individual_data[param] >= strength_threshold:
-                suitability_report['strength_areas'].append(param)
-            elif param in individual_data and individual_data[param] < improvement_threshold:
-                suitability_report['improvement_areas'].append(param)
-    else:
-        # For testers, check tester params as strengths
-        for param in tester_params:
-            if param in individual_data and individual_data[param] >= strength_threshold:
-                suitability_report['strength_areas'].append(param)
-            elif param in individual_data and individual_data[param] < improvement_threshold:
-                suitability_report['improvement_areas'].append(param)
-                
-        # Check common params
-        for param in common_params:
-            if param in individual_data and individual_data[param] >= strength_threshold:
-                suitability_report['strength_areas'].append(param)
-            elif param in individual_data and individual_data[param] < improvement_threshold:
-                suitability_report['improvement_areas'].append(param)
-    
-    return role, confidence, suitability_report
-
-def main():
-    """
-    Main function to demonstrate the model.
-    """
-    # Generate synthetic data
-    print("Generating synthetic data...")
-    data = generate_synthetic_data(1000)
-    
-    # Show data summary
-    print("\nData Summary:")
-    print(data.describe())
-    
-    # Check class distribution
-    print("\nClass Distribution:")
-    print(data['role_preference'].value_counts())
-    
-    # Evaluate the model
-    print("\nEvaluating model...")
-    model, _ = evaluate_model(data)
-    
-    # Demonstrate prediction for individuals
-    print("\nPrediction examples:")
-    
-    # Example 1: Developer-leaning profile
-    dev_example = {
-        'analytical_thinking': 85,
-        'attention_to_detail': 65,
-        'creativity': 80,
-        'problem_solving': 90,
-        'debugging_ability': 75,
-        'communication_skills': 70,
-        'programming_knowledge': 85,
-        'patience': 60,
-        'systems_thinking': 80,
-        'adaptability': 75,
-        'methodical_approach': 65,
-        'persistence': 70
-    }
-    
-    role, confidence = predict_individual(model, dev_example)
-    print(f"Example 1: Predicted as {role} with {confidence:.2%} confidence")
-    
-    # Example 2: Tester-leaning profile
-    tester_example = {
-        'analytical_thinking': 70,
-        'attention_to_detail': 90,
-        'creativity': 65,
-        'problem_solving': 75,
-        'debugging_ability': 85,
-        'communication_skills': 75,
-        'programming_knowledge': 70,
-        'patience': 85,
-        'systems_thinking': 75,
-        'adaptability': 70,
-        'methodical_approach': 90,
-        'persistence': 80
-    }
-    
-    role, confidence = predict_individual(model, tester_example)
-    print(f"Example 2: Predicted as {role} with {confidence:.2%} confidence")
-
+# Example usage
 if __name__ == "__main__":
-    main()
+    # Create and train a regression-based ML model
+    print("Training regression model...")
+    ml_regressor = ITCandidateML(model_type='regression')
+    ml_regressor.train(hyperparameter_tuning=False)
+    ml_regressor.save_model('it_candidate_regressor')
+    
+    # Create and train a classification-based ML model
+    print("\nTraining classification model...")
+    ml_classifier = ITCandidateML(model_type='classification')
+    ml_classifier.train(hyperparameter_tuning=False)
+    ml_classifier.save_model('it_candidate_classifier')
+    
+    # Example candidate: Jane Doe
+    jane = {
+        'technical_knowledge': 8.0,
+        'communication_skills': 7.0,
+        'problem_solving': 9.0,
+        'team_collaboration': 8.0,
+        'enterprise_experience': 6.0,
+        'stress_management': 9.0,
+        'response_time': 8.0,
+        'documentation_skills': 7.0,
+        'system_knowledge': 7.0,
+        'innovation_capability': 9.0,
+        'learning_agility': 8.0,
+        'code_quality': 8.0,
+        'architecture_understanding': 7.0
+    }
+    
+    # Evaluate Jane with regression model
+    jane_results_reg = ml_regressor.predict_role(jane)
+    print("\nRegression Model Results for Jane Doe:")
+    for role, data in jane_results_reg.items():
+        if role not in ["Most Suitable Role", "Versatility"]:
+            print(f"{role}: Score = {data['score']}, Classification = {data['classification']}")
+    print(f"Most Suitable Role: {jane_results_reg['Most Suitable Role']}")
+    print(f"Versatility: {jane_results_reg['Versatility']}")
+    
+    # Create visualization
+    plt_reg = ml_regressor.visualize_prediction("Jane Doe", jane_results_reg)
+    plt_reg.savefig('jane_ml_regression.png')
+    
+    # Evaluate Jane with classification model
+    jane_results_cls = ml_classifier.predict_role(jane)
+    print("\nClassification Model Results for Jane Doe:")
+    print(f"Predicted Role: {jane_results_cls['predicted_role']}")
+    print(f"Confidence Scores: {jane_results_cls['confidence']}")
+    
+    # Create visualization
+    plt_cls = ml_classifier.visualize_prediction("Jane Doe", jane_results_cls)
+    plt_cls.savefig('jane_ml_classification.png')
+    
+    # Example: Batch prediction with multiple candidates
+    candidates = pd.DataFrame([
+        {
+            'name': 'Jane Doe',
+            'technical_knowledge': 8.0,
+            'communication_skills': 7.0,
+            'problem_solving': 9.0,
+            'team_collaboration': 8.0,
+            'enterprise_experience': 6.0,
+            'stress_management': 9.0,
+            'response_time': 8.0,
+            'documentation_skills': 7.0,
+            'system_knowledge': 7.0,
+            'innovation_capability': 9.0,
+            'learning_agility': 8.0,
+            'code_quality': 8.0,
+            'architecture_understanding': 7.0
+        },
+        {
+            'name': 'John Smith',
+            'technical_knowledge': 7.0,
+            'communication_skills': 9.0,
+            'problem_solving': 7.0,
+            'team_collaboration': 9.0,
+            'enterprise_experience': 8.0,
+            'stress_management': 8.0,
+            'response_time': 9.0,
+            'documentation_skills': 8.0,
+            'system_knowledge': 9.0,
+            'innovation_capability': 6.0,
+            'learning_agility': 7.0,
+            'code_quality': 7.0,
+            'architecture_understanding': 6.0
+        }
+    ])
+    
+    # Get feature columns only
+    candidate_features = candidates.drop('name', axis=1)
+    
+    # Make predictions
+    batch_results = ml_regressor.predict_role(candidate_features)
+    
+    print("\nBatch Prediction Results:")
+    for i, name in enumerate(candidates['name']):
+        print(f"\n{name} - Most Suitable Role: {batch_results[i]['Most Suitable Role']}")
+        for role in ["Production Support", "Maintenance", "New Development"]:
+            print(f"  {role}: {batch_results[i][role]['score']}")
