@@ -642,10 +642,11 @@ EXEC sp_MSforeachtable 'ALTER TABLE ? DISABLE TRIGGER ALL'
                 master_file.write(f"PRINT 'Importing data for table {table_name}...'\n")
                 master_file.write(f":r ./{table_name}_data_mssql.sql\n\n")
             
-            master_file.write("""
--- Re-enable constraints and triggers
+            master_file.write("""-- Re-enable constraints and triggers
 PRINT 'Re-enabling constraints and triggers...'
 EXEC sp_MSforeachtable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 EXEC sp_MSforeachtable 'ALTER TABLE ? ENABLE TRIGGER ALL'
 
---
+-- Validate referential integrity
+PRINT 'Validating referential integrity...'
+""")
