@@ -1,0 +1,19 @@
+2025-02-28 17:36:06,340 - __main__ - INFO - Creating synthetic data for demonstration
+2025-02-28 17:36:06,360 - __main__ - INFO - Synthetic data created: corporate_spreads.csv, benchmark_spreads.csv
+2025-02-28 17:36:06,360 - __main__ - INFO - Initializing Spread Analysis Application
+2025-02-28 17:36:06,367 - __main__ - INFO - Data loaded successfully. Shape: (1306, 4)
+2025-02-28 17:36:06,369 - __main__ - INFO - Found 1 outliers in spread_corp
+2025-02-28 17:36:06,370 - __main__ - INFO - Found 3 outliers in spread_diff
+2025-02-28 17:36:06,371 - __main__ - INFO - Data cleaning completed
+2025-02-28 17:36:06,378 - __main__ - INFO - Feature engineering completed
+2025-02-28 17:36:06,379 - __main__ - INFO - Detected 48 statistical anomalies using z-score method
+2025-02-28 17:36:06,467 - __main__ - INFO - Trained Isolation Forest model with features: ['spread_diff', 'diff_zscore_5d', 'diff_zscore_10d', 'diff_zscore_20d', 'relative_movement']
+2025-02-28 17:36:06,544 - __main__ - INFO - Trained ARIMA(5, 1, 0) model for spread_diff
+2025-02-28 17:36:06,545 - __main__ - ERROR - Error generating forecast: 'Series' object has no attribute 'conf_int'
+2025-02-28 17:36:06,545 - __main__ - ERROR - Error initializing application: 'Series' object has no attribute 'conf_int'
+2025-02-28 17:36:07,272 - __main__ - INFO - Saved spread trend chart to ./visualizations/spread_trend.png
+2025-02-28 17:36:07,489 - __main__ - INFO - Saved anomaly chart to ./visualizations/anomalies.png
+2025-02-28 17:36:07,499 - __main__ - ERROR - Error creating forecast chart: 'NoneType' object is not subscriptable
+2025-02-28 17:36:07,499 - __main__ - ERROR - Error generating visualizations: 'NoneType' object is not subscriptable
+2025-02-28 17:36:07,500 - __main__ - ERROR - Error generating report: 'NoneType' object is not subscriptable
+2025-02-28 17:36:07,500 - __main__ - ERROR - Error in main application: 'NoneType' object is not subscriptable

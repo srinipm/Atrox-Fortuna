@@ -1,0 +1,20 @@
+# FICC Spread Analysis AI Solution dependencies
+
+# Core data processing and numerical libraries
+numpy>=1.20.0
+pandas>=1.3.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Statistical models and machine learning
+statsmodels>=0.13.0
+scikit-learn>=1.0.0
+
+# Model persistence
+joblib>=1.0.0
+
+# Optional: for notebooks if used
+jupyter>=1.0.0
+ipykernel>=6.0.0
