@@ -1,0 +1,336 @@
+2025-03-06 22:28:14,078 - INFO - Processing file: input/goodtestfile.cpp
+2025-03-06 22:28:14,078 - INFO - Processing file: input/goodtestfile.cpp
+2025-03-06 22:28:14,078 - INFO - input/goodtestfile.cpp: Replaced includes with oracle includes
+2025-03-06 22:28:14,078 - INFO - input/goodtestfile.cpp: Replaced includes with oracle includes
+2025-03-06 22:28:14,078 - INFO - input/goodtestfile.cpp: Added namespace using namespace oracle::occi;
+2025-03-06 22:28:14,078 - INFO - input/goodtestfile.cpp: Added namespace using namespace oracle::occi;
+2025-03-06 22:28:14,078 - INFO - input/goodtestfile.cpp: Renamed class from SybaseDatabaseManager to OracleDatabaseManager
+2025-03-06 22:28:14,078 - INFO - input/goodtestfile.cpp: Renamed class from SybaseDatabaseManager to OracleDatabaseManager
+2025-03-06 22:28:14,079 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,079 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,080 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,080 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,081 - INFO - input/goodtestfile.cpp: Replaced 8 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,081 - INFO - input/goodtestfile.cpp: Replaced 8 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,081 - INFO - input/goodtestfile.cpp: Replaced 12 occurrences of CS_INT with int
+2025-03-06 22:28:14,081 - INFO - input/goodtestfile.cpp: Replaced 12 occurrences of CS_INT with int
+2025-03-06 22:28:14,082 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,082 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,082 - INFO - input/goodtestfile.cpp: Replaced 5 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,082 - INFO - input/goodtestfile.cpp: Replaced 5 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,083 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_VOID with void
+2025-03-06 22:28:14,083 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_VOID with void
+2025-03-06 22:28:14,083 - INFO - input/goodtestfile.cpp: Replaced 22 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,083 - INFO - input/goodtestfile.cpp: Replaced 22 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,084 - INFO - input/goodtestfile.cpp: Replaced 7 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,084 - INFO - input/goodtestfile.cpp: Replaced 7 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_NULLTERM with -1
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_NULLTERM with -1
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &m_context)' to 'm_context = Environment::createEnvironment()'
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &m_context)' to 'm_context = Environment::createEnvironment()'
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Converted 'ct_init(m_context, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Converted 'ct_init(m_context, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Converted 'ct_con_alloc(m_context, &m_connection)' to 'm_connection = m_context->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,085 - INFO - input/goodtestfile.cpp: Converted 'ct_con_alloc(m_context, &m_connection)' to 'm_connection = m_context->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_cmd_alloc(m_connection, &m_command)' to 'm_command = m_connection->createStatement()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_cmd_alloc(m_connection, &m_command)' to 'm_command = m_connection->createStatement()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'm_command->execute()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'm_command->execute()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'm_command->execute()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'm_command->execute()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'resultType = (m_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'resultType = (m_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'resultType = (m_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'resultType = (m_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_fetch(m_command, 0, 0, 0)' to 'm_command->getResultSet()->next()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_fetch(m_command, 0, 0, 0)' to 'm_command->getResultSet()->next()'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,086 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'Environment::terminateConnection(m_connection)'
+2025-03-06 22:28:14,087 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,087 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,087 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,087 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,087 - INFO - input/goodtestfile.cpp: Replaced 4 message handlers with handleOracleError
+2025-03-06 22:28:14,087 - INFO - input/goodtestfile.cpp: Replaced 4 message handlers with handleOracleError
+2025-03-06 22:28:14,089 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/goodtestfile.cpp
+2025-03-06 22:28:14,089 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/goodtestfile.cpp
+2025-03-06 22:28:14,089 - INFO - Successfully converted: input/goodtestfile.cpp
+2025-03-06 22:28:14,089 - INFO - Successfully converted: input/goodtestfile.cpp
+2025-03-06 22:28:14,089 - INFO - Processing file: input/testfile.cpp
+2025-03-06 22:28:14,089 - INFO - Processing file: input/testfile.cpp
+2025-03-06 22:28:14,090 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,090 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,091 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,091 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,091 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_COMMAND with Statement*
+2025-03-06 22:28:14,091 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_COMMAND with Statement*
+2025-03-06 22:28:14,091 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,091 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,092 - INFO - input/testfile.cpp: Replaced 7 occurrences of CS_INT with int
+2025-03-06 22:28:14,092 - INFO - input/testfile.cpp: Replaced 7 occurrences of CS_INT with int
+2025-03-06 22:28:14,092 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,092 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,092 - INFO - input/testfile.cpp: Replaced 2 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,092 - INFO - input/testfile.cpp: Replaced 2 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,093 - INFO - input/testfile.cpp: Replaced 30 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,093 - INFO - input/testfile.cpp: Replaced 30 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,093 - INFO - input/testfile.cpp: Replaced 25 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,093 - INFO - input/testfile.cpp: Replaced 25 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &context)' to 'context = Environment::createEnvironment()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &context)' to 'context = Environment::createEnvironment()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_init(context, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_init(context, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_con_alloc(context, &connection)' to 'connection = context->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_con_alloc(context, &connection)' to 'connection = context->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,094 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'cmd = connection->createStatement()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, 0, 0, 0)' to 'cmd->getResultSet()->next()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, 0, 0, 0)' to 'cmd->getResultSet()->next()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, 0, 0, 0)' to 'cmd->getResultSet()->next()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, 0, 0, 0)' to 'cmd->getResultSet()->next()'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,095 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'Environment::terminateConnection(connection)'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,096 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,097 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile.cpp
+2025-03-06 22:28:14,097 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile.cpp
+2025-03-06 22:28:14,098 - INFO - Successfully converted: input/testfile.cpp
+2025-03-06 22:28:14,098 - INFO - Successfully converted: input/testfile.cpp
+2025-03-06 22:28:14,098 - INFO - Processing file: input/testfile_mid.cpp
+2025-03-06 22:28:14,098 - INFO - Processing file: input/testfile_mid.cpp
+2025-03-06 22:28:14,099 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,099 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,099 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,099 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,100 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_COMMAND with Statement*
+2025-03-06 22:28:14,100 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_COMMAND with Statement*
+2025-03-06 22:28:14,100 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,100 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,101 - INFO - input/testfile_mid.cpp: Replaced 9 occurrences of CS_INT with int
+2025-03-06 22:28:14,101 - INFO - input/testfile_mid.cpp: Replaced 9 occurrences of CS_INT with int
+2025-03-06 22:28:14,101 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,101 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,101 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,101 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,102 - INFO - input/testfile_mid.cpp: Replaced 38 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,102 - INFO - input/testfile_mid.cpp: Replaced 38 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,103 - INFO - input/testfile_mid.cpp: Replaced 15 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,103 - INFO - input/testfile_mid.cpp: Replaced 15 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,103 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,103 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,103 - INFO - input/testfile_mid.cpp: Replaced 3 occurrences of CS_NULLTERM with -1
+2025-03-06 22:28:14,103 - INFO - input/testfile_mid.cpp: Replaced 3 occurrences of CS_NULLTERM with -1
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &g_context)' to 'g_context = Environment::createEnvironment()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &g_context)' to 'g_context = Environment::createEnvironment()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_init(g_context, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_init(g_context, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_con_alloc(g_context, &g_connection)' to 'g_connection = g_context->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_con_alloc(g_context, &g_connection)' to 'g_connection = g_context->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'g_command = g_connection->createStatement()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'g_command->execute()'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,104 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'result_type = (g_command->getResultSet() != NULL)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, 0, 0, 0)' to 'g_command->getResultSet()->next()'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, 0, 0, 0)' to 'g_command->getResultSet()->next()'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, 0, 0, 0)' to 'g_command->getResultSet()->next()'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, 0, 0, 0)' to 'g_command->getResultSet()->next()'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_con_drop(g_connection)' to 'Environment::terminateConnection(g_connection)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'ct_con_drop(g_connection)' to 'Environment::terminateConnection(g_connection)'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_drop(g_context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,105 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_drop(g_context)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,107 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile_mid.cpp
+2025-03-06 22:28:14,107 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile_mid.cpp
+2025-03-06 22:28:14,107 - INFO - Successfully converted: input/testfile_mid.cpp
+2025-03-06 22:28:14,107 - INFO - Successfully converted: input/testfile_mid.cpp
+2025-03-06 22:28:14,108 - INFO - Processing file: input/complexfile.cpp
+2025-03-06 22:28:14,108 - INFO - Processing file: input/complexfile.cpp
+2025-03-06 22:28:14,109 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,109 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONTEXT with Environment*
+2025-03-06 22:28:14,110 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,110 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONNECTION with Connection*
+2025-03-06 22:28:14,110 - INFO - input/complexfile.cpp: Replaced 8 occurrences of CS_COMMAND with Statement*
+2025-03-06 22:28:14,110 - INFO - input/complexfile.cpp: Replaced 8 occurrences of CS_COMMAND with Statement*
+2025-03-06 22:28:14,111 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,111 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_RETCODE with Status
+2025-03-06 22:28:14,112 - INFO - input/complexfile.cpp: Replaced 19 occurrences of CS_INT with int
+2025-03-06 22:28:14,112 - INFO - input/complexfile.cpp: Replaced 19 occurrences of CS_INT with int
+2025-03-06 22:28:14,112 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,112 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_CHAR with char
+2025-03-06 22:28:14,113 - INFO - input/complexfile.cpp: Replaced 9 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,113 - INFO - input/complexfile.cpp: Replaced 9 occurrences of CS_FLOAT with float
+2025-03-06 22:28:14,114 - INFO - input/complexfile.cpp: Replaced 31 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,114 - INFO - input/complexfile.cpp: Replaced 31 occurrences of CS_SUCCEED with SUCCESS
+2025-03-06 22:28:14,115 - INFO - input/complexfile.cpp: Replaced 28 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,115 - INFO - input/complexfile.cpp: Replaced 28 occurrences of CS_UNUSED with 0
+2025-03-06 22:28:14,115 - INFO - input/complexfile.cpp: Replaced 2 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,115 - INFO - input/complexfile.cpp: Replaced 2 occurrences of CS_DATAFMT with Type
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_NULLTERM with -1
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_NULLTERM with -1
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &ctx)' to 'ctx = Environment::createEnvironment()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &ctx)' to 'ctx = Environment::createEnvironment()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_init(ctx, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_init(ctx, CS_VERSION_125)' to 'true /* Oracle environment already initialized */'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_con_alloc(ctx, &conn)' to 'conn = ctx->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_con_alloc(ctx, &conn)' to 'conn = ctx->createConnection(username, password, connectionString)'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'rawCmd = m_pConnection.get()->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'rawCmd = m_pConnection.get()->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'rawCmd = m_pConnection.get()->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'rawCmd = m_pConnection.get()->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'rawCmd = m_pConnection.get()->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'rawCmd = m_pConnection.get()->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(conn, &cmd)' to 'cmd = conn->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(conn, &cmd)' to 'cmd = conn->createStatement()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'cmd.get(->execute()'
+2025-03-06 22:28:14,116 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'cmd.get(->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'cmd.get(->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'cmd.get(->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'cmd.get(->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'cmd.get(->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd)' to 'cmd->execute()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'resultType = (cmd.get()->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'resultType = (cmd.get()->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'resultType = (cmd.get()->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'resultType = (cmd.get()->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'resultType = (cmd.get()->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'resultType = (cmd.get()->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'result_type = (cmd->getResultSet() != NULL)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), 0, 0, 0)' to 'cmd.get()->getResultSet()->next()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), 0, 0, 0)' to 'cmd.get()->getResultSet()->next()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), 0, 0, 0)' to 'cmd.get()->getResultSet()->next()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), 0, 0, 0)' to 'cmd.get()->getResultSet()->next()'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,117 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'Environment::terminateConnection(conn)'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,118 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* Environment termination handled by terminateEnvironment */'
+2025-03-06 22:28:14,120 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/complexfile.cpp
+2025-03-06 22:28:14,120 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/complexfile.cpp
+2025-03-06 22:28:14,120 - INFO - Successfully converted: input/complexfile.cpp
+2025-03-06 22:28:14,120 - INFO - Successfully converted: input/complexfile.cpp

@@ -710,6 +710,124 @@ public class GlobalStockLendingSystem implements AutoCloseable {
     }
     
     /**
+     * Retrieves the total market value of all securities on loan.
+     *
+     * @return total market value of securities on loan
+     * @throws SQLException if a database access error occurs
+     */
+    public BigDecimal getTotalMarketValueOnLoan() throws SQLException {
+        String sql = "SELECT SUM(market_value) AS total_market_value FROM stock_loans WHERE settlement_status = 'SETTLED'";
+        
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            
+            if (rs.next()) {
+                BigDecimal totalMarketValue = rs.getBigDecimal("total_market_value");
+                LOGGER.log(Level.INFO, "Total market value on loan: {0}", totalMarketValue);
+                return totalMarketValue;
+            } else {
+                return BigDecimal.ZERO;
+            }
+        }
+    }
+
+    /**
+     * Retrieves the number of active loans for a specific counterparty.
+     *
+     * @param counterpartyId the ID of the counterparty
+     * @return the number of active loans
+     * @throws SQLException if a database access error occurs
+     */
+    public int getActiveLoansCountForCounterparty(long counterpartyId) throws SQLException {
+        String sql = "SELECT COUNT(*) AS active_loans_count FROM stock_loans WHERE counterparty_id = ? AND settlement_status = 'SETTLED'";
+        
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setLong(1, counterpartyId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    int activeLoansCount = rs.getInt("active_loans_count");
+                    LOGGER.log(Level.INFO, "Active loans count for counterparty ID {0}: {1}", new Object[]{counterpartyId, activeLoansCount});
+                    return activeLoansCount;
+                } else {
+                    return 0;
+                }
+            }
+        }
+    }
+
+    /**
+     * Retrieves the average loan rate for all settled loans.
+     *
+     * @return the average loan rate
+     * @throws SQLException if a database access error occurs
+     */
+    public BigDecimal getAverageLoanRate() throws SQLException {
+        String sql = "SELECT AVG(loan_rate) AS average_loan_rate FROM stock_loans WHERE settlement_status = 'SETTLED'";
+        
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            
+            if (rs.next()) {
+                BigDecimal averageLoanRate = rs.getBigDecimal("average_loan_rate");
+                LOGGER.log(Level.INFO, "Average loan rate: {0}", averageLoanRate);
+                return averageLoanRate;
+            } else {
+                return BigDecimal.ZERO;
+            }
+        }
+    }
+
+    /**
+     * Retrieves the total quantity of securities available for lending.
+     *
+     * @return total quantity of securities available
+     * @throws SQLException if a database access error occurs
+     */
+    public BigDecimal getTotalQuantityAvailable() throws SQLException {
+        String sql = "SELECT SUM(quantity_available) AS total_quantity_available FROM securities_inventory";
+        
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            
+            if (rs.next()) {
+                BigDecimal totalQuantityAvailable = rs.getBigDecimal("total_quantity_available");
+                LOGGER.log(Level.INFO, "Total quantity available: {0}", totalQuantityAvailable);
+                return totalQuantityAvailable;
+            } else {
+                return BigDecimal.ZERO;
+            }
+        }
+    }
+
+    /**
+     * Retrieves the total number of counterparties.
+     *
+     * @return total number of counterparties
+     * @throws SQLException if a database access error occurs
+     */
+    public int getTotalCounterparties() throws SQLException {
+        String sql = "SELECT COUNT(*) AS total_counterparties FROM counterparties";
+        
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            
+            if (rs.next()) {
+                int totalCounterparties = rs.getInt("total_counterparties");
+                LOGGER.log(Level.INFO, "Total counterparties: {0}", totalCounterparties);
+                return totalCounterparties;
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    /**
      * Closes the GlobalStockLendingSystem and releases all resources.
      */
     @Override

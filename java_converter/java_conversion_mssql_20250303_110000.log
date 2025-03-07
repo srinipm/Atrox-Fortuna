@@ -1,0 +1,40 @@
+2025-03-03 11:00:00,434 - INFO - Processing file: input/PoorlyWrittenStockLendingSystem.java
+2025-03-03 11:00:00,434 - INFO - Processing file: input/PoorlyWrittenStockLendingSystem.java
+2025-03-03 11:00:00,435 - INFO - input/PoorlyWrittenStockLendingSystem.java: Replaced 1 Sybase imports with mssql imports
+2025-03-03 11:00:00,435 - INFO - input/PoorlyWrittenStockLendingSystem.java: Replaced 1 Sybase imports with mssql imports
+2025-03-03 11:00:00,435 - INFO - input/PoorlyWrittenStockLendingSystem.java: Replaced 1 Sybase connection URLs with mssql URLs
+2025-03-03 11:00:00,435 - INFO - input/PoorlyWrittenStockLendingSystem.java: Replaced 1 Sybase connection URLs with mssql URLs
+2025-03-03 11:00:00,437 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/java_converter/java_backups/input/PoorlyWrittenStockLendingSystem.java
+2025-03-03 11:00:00,437 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/java_converter/java_backups/input/PoorlyWrittenStockLendingSystem.java
+2025-03-03 11:00:00,437 - INFO - Successfully converted: input/PoorlyWrittenStockLendingSystem.java
+2025-03-03 11:00:00,437 - INFO - Successfully converted: input/PoorlyWrittenStockLendingSystem.java
+2025-03-03 11:00:00,438 - INFO - Processing file: input/GlobalStockLendingSystem.java
+2025-03-03 11:00:00,438 - INFO - Processing file: input/GlobalStockLendingSystem.java
+2025-03-03 11:00:00,438 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase imports with mssql imports
+2025-03-03 11:00:00,438 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase imports with mssql imports
+2025-03-03 11:00:00,438 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase driver references with mssql driver
+2025-03-03 11:00:00,438 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase driver references with mssql driver
+2025-03-03 11:00:00,438 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase connection properties with mssql properties
+2025-03-03 11:00:00,438 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase connection properties with mssql properties
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase connection properties with mssql properties
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Replaced 1 Sybase connection properties with mssql properties
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,439 - INFO - input/GlobalStockLendingSystem.java: Converted stored procedure call
+2025-03-03 11:00:00,440 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/java_converter/java_backups/input/GlobalStockLendingSystem.java
+2025-03-03 11:00:00,440 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/java_converter/java_backups/input/GlobalStockLendingSystem.java
+2025-03-03 11:00:00,440 - INFO - Successfully converted: input/GlobalStockLendingSystem.java
+2025-03-03 11:00:00,440 - INFO - Successfully converted: input/GlobalStockLendingSystem.java

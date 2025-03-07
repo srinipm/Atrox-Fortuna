@@ -1,0 +1,336 @@
+2025-03-06 22:17:46,807 - INFO - Processing file: input/goodtestfile.cpp
+2025-03-06 22:17:46,807 - INFO - Processing file: input/goodtestfile.cpp
+2025-03-06 22:17:46,807 - INFO - input/goodtestfile.cpp: Replaced includes with mssql includes
+2025-03-06 22:17:46,807 - INFO - input/goodtestfile.cpp: Replaced includes with mssql includes
+2025-03-06 22:17:46,807 - INFO - input/goodtestfile.cpp: Renamed class from SybaseDatabaseManager to MSSQLDatabaseManager
+2025-03-06 22:17:46,807 - INFO - input/goodtestfile.cpp: Renamed class from SybaseDatabaseManager to MSSQLDatabaseManager
+2025-03-06 22:17:46,808 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,808 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,808 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,808 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,809 - INFO - input/goodtestfile.cpp: Replaced 8 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,809 - INFO - input/goodtestfile.cpp: Replaced 8 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,810 - INFO - input/goodtestfile.cpp: Replaced 12 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,810 - INFO - input/goodtestfile.cpp: Replaced 12 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,810 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,810 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,811 - INFO - input/goodtestfile.cpp: Replaced 5 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,811 - INFO - input/goodtestfile.cpp: Replaced 5 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,812 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_VOID with void
+2025-03-06 22:17:46,812 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_VOID with void
+2025-03-06 22:17:46,812 - INFO - input/goodtestfile.cpp: Replaced 22 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,812 - INFO - input/goodtestfile.cpp: Replaced 22 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,813 - INFO - input/goodtestfile.cpp: Replaced 7 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,813 - INFO - input/goodtestfile.cpp: Replaced 7 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,813 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,813 - INFO - input/goodtestfile.cpp: Replaced 2 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_NULLTERM with SQL_NTS
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Replaced 4 occurrences of CS_NULLTERM with SQL_NTS
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &m_context)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &m_context)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &m_context)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &m_context)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'ct_init(m_context, CS_VERSION_125)' to 'SQLSetEnvAttr(m_context, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'ct_init(m_context, CS_VERSION_125)' to 'SQLSetEnvAttr(m_context, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'ct_con_alloc(m_context, &m_connection)' to 'SQLAllocHandle(SQL_HANDLE_DBC, m_context, &m_connection)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'ct_con_alloc(m_context, &m_connection)' to 'SQLAllocHandle(SQL_HANDLE_DBC, m_context, &m_connection)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'ct_cmd_alloc(m_connection, &m_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_connection, &m_command)'
+2025-03-06 22:17:46,814 - INFO - input/goodtestfile.cpp: Converted 'ct_cmd_alloc(m_connection, &m_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_connection, &m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'SQLExecute(m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'SQLExecute(m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'SQLExecute(m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_send(m_command)' to 'SQLExecute(m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'SQLNumResultCols(m_command, &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'SQLNumResultCols(m_command, &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'SQLNumResultCols(m_command, &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_results(m_command, &resultType)' to 'SQLNumResultCols(m_command, &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_fetch(m_command, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_fetch(m_command, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(m_command)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'ct_con_drop(m_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, m_connection)'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,815 - INFO - input/goodtestfile.cpp: Converted 'cs_ctx_drop(m_context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,816 - INFO - input/goodtestfile.cpp: Replaced 2 serverMessageHandler with handleSQLServerError
+2025-03-06 22:17:46,816 - INFO - input/goodtestfile.cpp: Replaced 2 serverMessageHandler with handleSQLServerError
+2025-03-06 22:17:46,816 - INFO - input/goodtestfile.cpp: Replaced 2 clientMessageHandler with handleSQLClientError
+2025-03-06 22:17:46,816 - INFO - input/goodtestfile.cpp: Replaced 2 clientMessageHandler with handleSQLClientError
+2025-03-06 22:17:46,817 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/goodtestfile.cpp
+2025-03-06 22:17:46,817 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/goodtestfile.cpp
+2025-03-06 22:17:46,817 - INFO - Successfully converted: input/goodtestfile.cpp
+2025-03-06 22:17:46,817 - INFO - Successfully converted: input/goodtestfile.cpp
+2025-03-06 22:17:46,817 - INFO - Processing file: input/testfile.cpp
+2025-03-06 22:17:46,817 - INFO - Processing file: input/testfile.cpp
+2025-03-06 22:17:46,818 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,818 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,818 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,818 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,819 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_COMMAND with SQLHSTMT
+2025-03-06 22:17:46,819 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_COMMAND with SQLHSTMT
+2025-03-06 22:17:46,819 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,819 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,820 - INFO - input/testfile.cpp: Replaced 7 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,820 - INFO - input/testfile.cpp: Replaced 7 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,820 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,820 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,820 - INFO - input/testfile.cpp: Replaced 2 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,820 - INFO - input/testfile.cpp: Replaced 2 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,821 - INFO - input/testfile.cpp: Replaced 30 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,821 - INFO - input/testfile.cpp: Replaced 30 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,821 - INFO - input/testfile.cpp: Replaced 25 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,821 - INFO - input/testfile.cpp: Replaced 25 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Replaced 1 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &context)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &context)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &context)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &context)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_init(context, CS_VERSION_125)' to 'SQLSetEnvAttr(context, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_init(context, CS_VERSION_125)' to 'SQLSetEnvAttr(context, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_con_alloc(context, &connection)' to 'SQLAllocHandle(SQL_HANDLE_DBC, context, &connection)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_con_alloc(context, &connection)' to 'SQLAllocHandle(SQL_HANDLE_DBC, context, &connection)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,822 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_cmd_alloc(connection, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, connection, &cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_fetch(cmd, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,823 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'ct_con_drop(connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, connection)'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,824 - INFO - input/testfile.cpp: Converted 'cs_ctx_drop(context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,825 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile.cpp
+2025-03-06 22:17:46,825 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile.cpp
+2025-03-06 22:17:46,825 - INFO - Successfully converted: input/testfile.cpp
+2025-03-06 22:17:46,825 - INFO - Successfully converted: input/testfile.cpp
+2025-03-06 22:17:46,826 - INFO - Processing file: input/testfile_mid.cpp
+2025-03-06 22:17:46,826 - INFO - Processing file: input/testfile_mid.cpp
+2025-03-06 22:17:46,826 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,826 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,827 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,827 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,827 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_COMMAND with SQLHSTMT
+2025-03-06 22:17:46,827 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_COMMAND with SQLHSTMT
+2025-03-06 22:17:46,828 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,828 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,828 - INFO - input/testfile_mid.cpp: Replaced 9 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,828 - INFO - input/testfile_mid.cpp: Replaced 9 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,828 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,828 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,829 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,829 - INFO - input/testfile_mid.cpp: Replaced 2 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,830 - INFO - input/testfile_mid.cpp: Replaced 38 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,830 - INFO - input/testfile_mid.cpp: Replaced 38 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,830 - INFO - input/testfile_mid.cpp: Replaced 15 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,830 - INFO - input/testfile_mid.cpp: Replaced 15 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Replaced 1 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Replaced 3 occurrences of CS_NULLTERM with SQL_NTS
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Replaced 3 occurrences of CS_NULLTERM with SQL_NTS
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &g_context)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &g_context)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &g_context)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &g_context)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_init(g_context, CS_VERSION_125)' to 'SQLSetEnvAttr(g_context, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_init(g_context, CS_VERSION_125)' to 'SQLSetEnvAttr(g_context, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_con_alloc(g_context, &g_connection)' to 'SQLAllocHandle(SQL_HANDLE_DBC, g_context, &g_connection)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_con_alloc(g_context, &g_connection)' to 'SQLAllocHandle(SQL_HANDLE_DBC, g_context, &g_connection)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,831 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_cmd_alloc(g_connection, &g_command)' to 'SQLAllocHandle(SQL_HANDLE_STMT, g_connection, &g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_send(g_command)' to 'SQLExecute(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_results(g_command, &result_type)' to 'SQLNumResultCols(g_command, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_fetch(g_command, SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(g_command)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_con_drop(g_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, g_connection)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'ct_con_drop(g_connection)' to 'SQLFreeHandle(SQL_HANDLE_DBC, g_connection)'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_drop(g_context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,832 - INFO - input/testfile_mid.cpp: Converted 'cs_ctx_drop(g_context)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,834 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile_mid.cpp
+2025-03-06 22:17:46,834 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/testfile_mid.cpp
+2025-03-06 22:17:46,834 - INFO - Successfully converted: input/testfile_mid.cpp
+2025-03-06 22:17:46,834 - INFO - Successfully converted: input/testfile_mid.cpp
+2025-03-06 22:17:46,834 - INFO - Processing file: input/complexfile.cpp
+2025-03-06 22:17:46,834 - INFO - Processing file: input/complexfile.cpp
+2025-03-06 22:17:46,835 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,835 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONTEXT with SQLHENV
+2025-03-06 22:17:46,836 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,836 - INFO - input/complexfile.cpp: Replaced 6 occurrences of CS_CONNECTION with SQLHDBC
+2025-03-06 22:17:46,837 - INFO - input/complexfile.cpp: Replaced 8 occurrences of CS_COMMAND with SQLHSTMT
+2025-03-06 22:17:46,837 - INFO - input/complexfile.cpp: Replaced 8 occurrences of CS_COMMAND with SQLHSTMT
+2025-03-06 22:17:46,837 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,837 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_RETCODE with SQLRETURN
+2025-03-06 22:17:46,838 - INFO - input/complexfile.cpp: Replaced 19 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,838 - INFO - input/complexfile.cpp: Replaced 19 occurrences of CS_INT with SQLINTEGER
+2025-03-06 22:17:46,839 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,839 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_CHAR with SQLCHAR
+2025-03-06 22:17:46,839 - INFO - input/complexfile.cpp: Replaced 9 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,839 - INFO - input/complexfile.cpp: Replaced 9 occurrences of CS_FLOAT with SQLFLOAT
+2025-03-06 22:17:46,840 - INFO - input/complexfile.cpp: Replaced 31 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,840 - INFO - input/complexfile.cpp: Replaced 31 occurrences of CS_SUCCEED with SQL_SUCCESS
+2025-03-06 22:17:46,841 - INFO - input/complexfile.cpp: Replaced 28 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,841 - INFO - input/complexfile.cpp: Replaced 28 occurrences of CS_UNUSED with SQL_NULL_HANDLE
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Replaced 2 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Replaced 2 occurrences of CS_DATAFMT with SQLSMALLINT
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_NULLTERM with SQL_NTS
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Replaced 7 occurrences of CS_NULLTERM with SQL_NTS
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &ctx)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &ctx)'
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Converted 'cs_ctx_alloc(CS_VERSION_125, &ctx)' to 'SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &ctx)'
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Converted 'ct_init(ctx, CS_VERSION_125)' to 'SQLSetEnvAttr(ctx, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,842 - INFO - input/complexfile.cpp: Converted 'ct_init(ctx, CS_VERSION_125)' to 'SQLSetEnvAttr(ctx, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_con_alloc(ctx, &conn)' to 'SQLAllocHandle(SQL_HANDLE_DBC, ctx, &conn)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_con_alloc(ctx, &conn)' to 'SQLAllocHandle(SQL_HANDLE_DBC, ctx, &conn)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_pConnection.get(), &rawCmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_pConnection.get(), &rawCmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_pConnection.get(), &rawCmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_pConnection.get(), &rawCmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_pConnection.get(), &rawCmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(m_pConnection.get(), &rawCmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, m_pConnection.get(), &rawCmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(conn, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, conn, &cmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_cmd_alloc(conn, &cmd)' to 'SQLAllocHandle(SQL_HANDLE_STMT, conn, &cmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'SQLExecute(cmd.get()'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'SQLExecute(cmd.get()'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'SQLExecute(cmd.get()'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'SQLExecute(cmd.get()'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'SQLExecute(cmd.get()'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd.get()' to 'SQLExecute(cmd.get()'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_send(cmd)' to 'SQLExecute(cmd)'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'SQLNumResultCols(cmd.get(), &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'SQLNumResultCols(cmd.get(), &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'SQLNumResultCols(cmd.get(), &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'SQLNumResultCols(cmd.get(), &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'SQLNumResultCols(cmd.get(), &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd.get(), &resultType)' to 'SQLNumResultCols(cmd.get(), &resultType) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_results(cmd, &result_type)' to 'SQLNumResultCols(cmd, &result_type) == SQL_SUCCESS ? SQL_SUCCESS : SQL_NO_DATA'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd.get())'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd.get())'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd.get())'
+2025-03-06 22:17:46,843 - INFO - input/complexfile.cpp: Converted 'ct_fetch(cmd.get(), SQL_NULL_HANDLE, SQL_NULL_HANDLE, SQL_NULL_HANDLE)' to 'SQLFetch(cmd.get())'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'ct_con_drop(conn)' to 'SQLFreeHandle(SQL_HANDLE_DBC, conn)'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,844 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,845 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,845 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,845 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,845 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,845 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,845 - INFO - input/complexfile.cpp: Converted 'cs_ctx_drop(ctx)' to '1 /* cs_ctx_drop not needed in ODBC */'
+2025-03-06 22:17:46,846 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/complexfile.cpp
+2025-03-06 22:17:46,846 - INFO - Created backup at: /Users/srinivasanpichumani/github/Atrox-Fortuna/cpp_converter/backups/input/complexfile.cpp
+2025-03-06 22:17:46,846 - INFO - Successfully converted: input/complexfile.cpp
+2025-03-06 22:17:46,846 - INFO - Successfully converted: input/complexfile.cpp

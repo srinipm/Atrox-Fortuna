@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Java Dependency Visualizer</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        #container {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #graph {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .link {
+            stroke-opacity: 0.6;
+        }
+        .controls {
+            margin-bottom: 10px;
+        }
+        .tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 12px;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #fileInput {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        .legend {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 5px;
+            margin-right: 5px;
+        }
+        .settings {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+        label {
+            margin-right: 10px;
+        }
+        .database-node {
+            fill: #E6FFCC;
+        }
+        .db-access {
+            stroke-dasharray: 5, 5;
+        }
+        .checkbox-group {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-label {
+            margin-right: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .access-select, .access-insert, .access-update, .access-delete, .access-other {
+            stroke-dasharray: 5, 5;
+        }
+        .access-select {
+            stroke: #0000FF;
+        }
+        .access-insert {
+            stroke: #00FF00;
+        }
+        .access-update {
+            stroke: #FFA500;
+        }
+        .access-delete {
+            stroke: #FF0000;
+        }
+        .access-other {
+            stroke: #808080;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Java Dependency Visualizer</h1>
+        
+        <div class="controls">
+            <input type="file" id="fileInput" accept=".json">
+            <button id="zoomFit">Zoom to Fit</button>
+            <button id="resetGraph">Reset</button>
+            
+            <div class="settings">
+                <div class="form-group">
+                    <label for="packageFilter">Filter by Package: </label>
+                    <input type="text" id="packageFilter">
+                </div>
+                
+                <div class="form-group">
+                    <label>Max Depth to Show:</label>
+                    <input type="range" id="depthFilter" min="1" max="10" value="5">
+                    <span id="depthValue">5</span>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="highlightRecursive" checked>
+                        Highlight Recursive Calls
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showDatabaseTables" checked>
+                        Show Database Tables
+                    </label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showSelect" checked> 
+                        Show SELECT
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showInsert" checked> 
+                        Show INSERT
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showUpdate" checked> 
+                        Show UPDATE
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showDelete" checked> 
+                        Show DELETE
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-bottom: 10px; font-weight: bold; color: #333;">
+            Current View: <span id="viewTypeIndicator">Full View</span>
+        </div>
+        
+        <div id="graph"></div>
+        
+        <div class="legend">
+            <h3>Legend</h3>
+            <div>
+                <h4>Method Call Types</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ff00ff; height: 3px;"></div> Direct Call
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #0000ff; height: 3px;"></div> Depth 1
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #4d00b2; height: 2px;"></div> Depth 2
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #7b0066; height: 1px;"></div> Depth 3+
+                </div>
+            </div>
+            <div>
+                <h4>Database Access Types</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #E6FFCC; width: 15px; height: 15px; border-radius: 0;"></div> Database Table
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #0000FF; height: 2px; border-top: 1px dashed #0000FF;"></div> SELECT
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #00FF00; height: 2px; border-top: 1px dashed #00FF00;"></div> INSERT
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #FFA500; height: 2px; border-top: 1px dashed #FFA500;"></div> UPDATE
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #FF0000; height: 2px; border-top: 1px dashed #FF0000;"></div> DELETE
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create the force-directed graph
+        const width = document.getElementById('graph').clientWidth;
+        const height = document.getElementById('graph').clientHeight;
+        
+        let svg = d3.select('#graph')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+        
+        // Add zoom behavior
+        let zoom = d3.zoom()
+            .scaleExtent([0.1, 10])
+            .on('zoom', (event) => {
+                g.attr('transform', event.transform);
+            });
+        
+        svg.call(zoom);
+        
+        // Main graphics container with zoom capabilities
+        let g = svg.append('g');
+        
+        // Create tooltip
+        const tooltip = d3.select('body').append('div')
+            .attr('class', 'tooltip')
+            .style('opacity', 0);
+        
+        // Initialize simulation
+        let simulation = d3.forceSimulation()
+            .force('link', d3.forceLink().id(d => d.id).distance(100))
+            .force('charge', d3.forceManyBody().strength(-300))
+            .force('center', d3.forceCenter(width / 2, height / 2));
+        
+        let link, node, pathsFromSelected;
+        let graphData, originalData;
+        
+        // Color scale for depth
+        const depthColor = d => {
+            // If this is a database access link, use access type coloring
+            if (d.type === 'db_access') {
+                if (d.access_types && d.access_types.includes('SELECT')) return "#0000FF";
+                if (d.access_types && d.access_types.includes('INSERT')) return "#00FF00";
+                if (d.access_types && d.access_types.includes('UPDATE')) return "#FFA500";
+                if (d.access_types && d.access_types.includes('DELETE')) return "#FF0000";
+                return "#808080";  // Default for other access types
+            }
+            
+            // For method call links, use depth coloring
+            const depth = d.depth || 1;
+            if (depth === 1) return "#0000ff";  // Blue for direct calls
+            if (depth === 2) return "#4d00b2";  // Purple for depth 2
+            if (depth === 3) return "#7b0066";  // Deep pink for depth 3
+            return "#990000";  // Red for deep calls
+        };
+        
+        // Line width based on depth
+        const depthWidth = d => {
+            const depth = d.depth || 1;
+            return Math.max(0.5, 4 - depth * 0.7);  // Thicker lines for closer relationships
+        };
+        
+        // Load the dependency graph
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        originalData = JSON.parse(JSON.stringify(data)); // Deep copy
+                        graphData = data;
+                        renderGraph(data);
+                    } catch (error) {
+                        console.error('Error parsing JSON:', error);
+                        alert('Error loading the graph data. Please check the console for details.');
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+        
+        // Update depth filter display
+        document.getElementById('depthFilter').addEventListener('input', function(event) {
+            document.getElementById('depthValue').textContent = event.target.value;
+        });
+        
+        // Apply depth filter
+        document.getElementById('depthFilter').addEventListener('change', function(event) {
+            if (!originalData) return;
+            
+            const maxDepth = parseInt(event.target.value);
+            
+            // Filter links based on depth
+            const filteredLinks = originalData.links.filter(link => 
+                link.type === 'db_access' || (link.depth || 1) <= maxDepth
+            );
+            
+            // Get nodes connected by these links
+            const nodeIds = new Set();
+            filteredLinks.forEach(link => {
+                nodeIds.add(typeof link.source === 'object' ? link.source.id : link.source);
+                nodeIds.add(typeof link.target === 'object' ? link.target.id : link.target);
+            });
+            
+            // Filter nodes
+            const filteredNodes = originalData.nodes.filter(node => nodeIds.has(node.id));
+            
+            // Update and render the filtered graph
+            graphData = {
+                nodes: filteredNodes,
+                links: filteredLinks
+            };
+            
+            renderGraph(graphData);
+        });
+
+        // Function to apply all current filters
+        function applyFilters() {
+            if (!originalData) return;
+            
+            // Start with all nodes and links
+            let filteredNodes = [...originalData.nodes];
+            let filteredLinks = [...originalData.links];
+            
+            // Apply depth filter
+            const maxDepth = parseInt(document.getElementById('depthFilter').value);
+            filteredLinks = filteredLinks.filter(link => 
+                link.type === 'db_access' || (link.depth || 1) <= maxDepth
+            );
+            
+            // Apply database table visibility filter
+            const showDatabaseTables = document.getElementById('showDatabaseTables').checked;
+            if (!showDatabaseTables) {
+                filteredNodes = filteredNodes.filter(node => node.type !== 'database');
+                filteredLinks = filteredLinks.filter(link => link.type !== 'db_access');
+            }
+            
+            // Apply database access type filters
+            if (showDatabaseTables) {
+                const showSelect = document.getElementById('showSelect').checked;
+                const showInsert = document.getElementById('showInsert').checked;
+                const showUpdate = document.getElementById('showUpdate').checked;
+                const showDelete = document.getElementById('showDelete').checked;
+                
+                filteredLinks = filteredLinks.filter(link => {
+                    if (link.type !== 'db_access') return true;
+                    
+                    if (!link.access_types) return true;
+                    
+                    if (!showSelect && link.access_types.includes('SELECT')) return false;
+                    if (!showInsert && link.access_types.includes('INSERT')) return false;
+                    if (!showUpdate && link.access_types.includes('UPDATE')) return false;
+                    if (!showDelete && link.access_types.includes('DELETE')) return false;
+                    
+                    return true;
+                });
+            }
+            
+            // Apply package filter
+            const filterText = document.getElementById('packageFilter').value.toLowerCase();
+            if (filterText) {
+                filteredNodes = filteredNodes.filter(node => 
+                    node.type === 'database' || 
+                    (node.package && node.package.toLowerCase().includes(filterText))
+                );
+            }
+            
+            // Get node IDs for link filtering
+            const nodeIds = new Set(filteredNodes.map(node => node.id));
+            
+            // Filter links to only include those connecting visible nodes
+            filteredLinks = filteredLinks.filter(link => 
+                nodeIds.has(typeof link.source === 'object' ? link.source.id : link.source) && 
+                nodeIds.has(typeof link.target === 'object' ? link.target.id : link.target)
+            );
+            
+            // Final node filtering to only include nodes connected by links
+            const connectedNodeIds = new Set();
+            filteredLinks.forEach(link => {
+                connectedNodeIds.add(typeof link.source === 'object' ? link.source.id : link.source);
+                connectedNodeIds.add(typeof link.target === 'object' ? link.target.id : link.target);
+            });
+            
+            filteredNodes = filteredNodes.filter(node => connectedNodeIds.has(node.id));
+            
+            // Update and render the filtered graph
+            graphData = {
+                nodes: filteredNodes,
+                links: filteredLinks
+            };
+            
+            renderGraph(graphData);
+        }
+        
+        function renderGraph(data) {
+            // Clear previous graph
+            g.selectAll('*').remove();
+
+            // Add view type indicator
+            let viewType = "Full View";
+            if (data.nodes.every(n => n.type === 'database' || (n.type === 'method' && n.db_accessor))) {
+                viewType = "Database Interactions View";
+            } else if (!data.nodes.some(n => n.type === 'database')) {
+                viewType = "Method Dependencies View";
+            }
+            
+            // Add view type indicator at the top
+            d3.select('#viewTypeIndicator').text(viewType);
+            
+            // Create links
+            link = g.append('g')
+                .attr('class', 'links')
+                .selectAll('line')
+                .data(data.links)
+                .enter()
+                .append('line')
+                .attr('class', d => {
+                    if (d.type === 'db_access') {
+                        const accessType = d.access_types && d.access_types.length > 0 ? 
+                                            d.access_types[0].toLowerCase() : 'other';
+                        return `link db-access access-${accessType}`;
+                    }
+                    return 'link';
+                })
+                .style('stroke', depthColor)
+                .style('stroke-width', depthWidth)
+                .style('stroke-dasharray', d => d.type === 'db_access' ? '5,5' : 'none');
+            
+            // Create nodes - using different symbols for methods vs database tables
+            const nodeGroups = g.append('g')
+                .attr('class', 'nodes')
+                .selectAll('g')
+                .data(data.nodes)
+                .enter()
+                .append('g');
+                
+            // Method nodes (circles)
+            nodeGroups.filter(d => d.type !== 'database')
+                .append('circle')
+                .attr('r', 6)
+                .attr('class', 'node')
+                .style('fill', d => colorByPackage(d.package));
+                
+            // Database nodes (rectangles)
+            nodeGroups.filter(d => d.type === 'database')
+                .append('rect')
+                .attr('width', 16)
+                .attr('height', 16)
+                .attr('x', -8)
+                .attr('y', -8)
+                .attr('class', 'node database-node')
+                .style('fill', '#E6FFCC')
+                .style('stroke', '#333')
+                .style('stroke-width', 1);
+            
+            // Add drag behavior to all nodes
+            nodeGroups.call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended));
+            
+            // Add tooltips to nodes
+            nodeGroups.on('mouseover', function(event, d) {
+                tooltip.transition()
+                    .duration(200)
+                    .style('opacity', .9);
+                
+                let tooltipContent = '';
+                if (d.type === 'database') {
+                    tooltipContent = `<strong>Database Table:</strong> ${d.table}<br>`;
+                    
+                    // Find all methods that access this table
+                    const accessingMethods = data.links.filter(link => 
+                        (typeof link.target === 'object' ? link.target.id : link.target) === d.id
+                    ).map(link => {
+                        const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+                        const method = data.nodes.find(n => n.id === sourceId);
+                        return {
+                            name: method ? `${method.class}.${method.method}` : 'Unknown',
+                            access: link.access_types || ['Unknown']
+                        };
+                    });
+                    
+                    if (accessingMethods.length > 0) {
+                        tooltipContent += '<strong>Accessed by:</strong><br>';
+                        accessingMethods.slice(0, 5).forEach(m => {
+                            tooltipContent += `- ${m.name} (${m.access.join(', ')})<br>`;
+                        });
+                        
+                        if (accessingMethods.length > 5) {
+                            tooltipContent += `... and ${accessingMethods.length - 5} more`;
+                        }
+                    }
+                } else {
+                    tooltipContent = `
+                        <strong>Method:</strong> ${d.method}<br>
+                        <strong>Class:</strong> ${d.class}<br>
+                        <strong>Package:</strong> ${d.package}<br>
+                    `;
+                    
+                    // Find all tables accessed by this method
+                    const accessedTables = data.links.filter(link => 
+                        (typeof link.source === 'object' ? link.source.id : link.source) === d.id &&
+                        link.type === 'db_access'
+                    ).map(link => {
+                        const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+                        const table = data.nodes.find(n => n.id === targetId);
+                        return {
+                            name: table ? table.table : 'Unknown',
+                            access: link.access_types || ['Unknown']
+                        };
+                    });
+                    
+                    if (accessedTables.length > 0) {
+                        tooltipContent += '<strong>Accesses tables:</strong><br>';
+                        accessedTables.forEach(t => {
+                            tooltipContent += `- ${t.name} (${t.access.join(', ')})<br>`;
+                        });
+                    }
+                }
+                
+                tooltip.html(tooltipContent)
+                    .style('left', (event.pageX + 10) + 'px')
+                    .style('top', (event.pageY - 28) + 'px');
+                
+                // Highlight related nodes if checkbox is checked
+                if (document.getElementById('highlightRecursive').checked) {
+                    highlightRelatedNodes(d.id);
+                }
+            })
+            .on('mouseout', function() {
+                tooltip.transition()
+                    .duration(500)
+                    .style('opacity', 0);
+                
+                // Restore all nodes and links
+                if (document.getElementById('highlightRecursive').checked) {
+                    nodeGroups.style('opacity', 1);
+                    link.style('opacity', 0.6)
+                        .style('stroke', depthColor)
+                        .style('stroke-width', d => depthWidth(d));
+                }
+            });
+            
+            // Add simulation
+            simulation
+                .nodes(data.nodes)
+                .on('tick', ticked);
+            
+            simulation.force('link')
+                .links(data.links);
+            
+            // Reset simulation
+            simulation.alpha(1).restart();
+            
+            // Fit to view
+            zoomToFit();
+            
+            // Function for moving nodes during simulation ticks
+            function ticked() {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                nodeGroups
+                    .attr('transform', d => `translate(${d.x}, ${d.y})`);
+            }
+        }
+        
+        function highlightRelatedNodes(nodeId) {
+            // Dim all nodes and links first
+            d3.selectAll('.nodes g').style('opacity', 0.2);
+            link.style('opacity', 0.1);
+            
+            // Find all links connected to this node
+            const connectedLinks = graphData.links.filter(l => 
+                (typeof l.source === 'object' ? l.source.id : l.source) === nodeId || 
+                (typeof l.target === 'object' ? l.target.id : l.target) === nodeId
+            );
+            
+            // Find all nodes connected directly to this node
+            const connectedNodeIds = new Set();
+            connectedNodeIds.add(nodeId); // Include the selected node
+            
+            connectedLinks.forEach(l => {
+                connectedNodeIds.add(typeof l.source === 'object' ? l.source.id : l.source);
+                connectedNodeIds.add(typeof l.target === 'object' ? l.target.id : l.target);
+            });
+            
+            // Highlight connected nodes
+            d3.selectAll('.nodes g')
+                .filter(d => connectedNodeIds.has(d.id))
+                .style('opacity', 1);
+            
+            // Highlight and style connected links
+            link.filter(l => 
+                    (typeof l.source === 'object' ? l.source.id : l.source) === nodeId || 
+                    (typeof l.target === 'object' ? l.target.id : l.target) === nodeId
+                )
+                .style('opacity', 1)
+                .style('stroke-width', l => depthWidth(l) * 1.5);
+        }
+        
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+        
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+        
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+        
+        function zoomToFit() {
+            const bounds = g.node().getBBox();
+            const parent = g.node().parentElement;
+            const fullWidth = parent.clientWidth;
+            const fullHeight = parent.clientHeight;
+            
+            const width = bounds.width;
+            const height = bounds.height;
+            
+            const midX = bounds.x + width / 2;
+            const midY = bounds.y + height / 2;
+            
+            if (width === 0 || height === 0) return; // No bounds
+            
+            const scale = 0.8 / Math.max(width / fullWidth, height / fullHeight);
+            const translate = [fullWidth / 2 - scale * midX, fullHeight / 2 - scale * midY];
+            
+            svg.transition()
+                .duration(750)
+                .call(zoom.transform, d3.zoomIdentity
+                    .translate(translate[0], translate[1])
+                    .scale(scale));
+        }
+        
+        function colorByPackage(packageName) {
+            // Simple hash function to generate colors based on package name
+            if (!packageName) return "#999";
+            
+            let hash = 0;
+            for (let i = 0; i < packageName.length; i++) {
+                hash = packageName.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            const hue = Math.abs(hash % 360);
+            return `hsl(${hue}, 70%, 60%)`;
+        }
+        
+        // Zoom to fit button
+        document.getElementById('zoomFit').addEventListener('click', zoomToFit);
+        
+        // Reset button
+        document.getElementById('resetGraph').addEventListener('click', function() {
+            if (originalData) {
+                graphData = JSON.parse(JSON.stringify(originalData));
+                renderGraph(graphData);
+            }
+        });
+        
+        // Package filter
+        document.getElementById('packageFilter').addEventListener('input', function() {
+            applyFilters();
+        });
+
+        // Database filters
+        document.getElementById('showDatabaseTables').addEventListener('change', function() {
+            applyFilters();
+        });
+        
+        document.getElementById('showSelect').addEventListener('change', applyFilters);
+        document.getElementById('showInsert').addEventListener('change', applyFilters);
+        document.getElementById('showUpdate').addEventListener('change', applyFilters);
+        document.getElementById('showDelete').addEventListener('change', applyFilters);
+    </script>
+</body>
+</html>
