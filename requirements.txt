@@ -1,9 +1,0 @@
-# Core dependencies
-javalang>=0.13.0  # Java parser for Python
-graphviz>=0.20.1  # Optional: For direct DOT file rendering
-sqlparse>=0.4.4   # SQL parser for database table extraction
-
-# Optional dependencies
-networkx>=3.0     # Optional: For additional graph operations
-matplotlib>=3.7.0 # Optional: For direct visualization in Python
-pytest>=7.3.1     # Optional: For testing
