@@ -1,0 +1,1348 @@
+2025-03-15 13:18:49,986 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:18:50,265 - code_agents - INFO - Initialized CodeAgentSystem with model codellama
+2025-03-15 13:18:50,271 - code_agents - INFO - Found 33 files to analyze in tools/samples/Hospital-Management-System-master
+2025-03-15 13:18:50,272 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,272 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,272 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,273 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,275 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,275 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,275 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,275 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,276 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,276 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,276 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,276 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,283 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,283 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,283 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,285 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,285 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,286 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,286 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,286 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,286 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,287 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,287 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,287 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,287 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,289 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,289 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,289 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,290 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,290 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,290 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,291 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,291 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,305 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,305 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,305 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,305 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,306 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,307 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:18:50,308 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,018 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:20:02,096 - code_agents - INFO - Initialized CodeAgentSystem with model codellama
+2025-03-15 13:20:02,102 - code_agents - INFO - Found 33 files to analyze in tools/samples/Hospital-Management-System-master
+2025-03-15 13:20:02,103 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,103 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,104 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,104 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,104 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,105 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,105 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,106 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,106 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,110 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,117 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,118 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,119 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,119 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,119 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,119 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,120 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,120 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,120 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,120 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,120 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,121 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,122 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,123 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,124 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,124 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,124 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,124 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,124 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:02,124 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:20:46,371 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:21:38,014 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:21:38,085 - code_agents - INFO - Initialized CodeAgentSystem with model gemma
+2025-03-15 13:21:38,092 - code_agents - INFO - Found 33 files to analyze in tools/samples/Hospital-Management-System-master
+2025-03-15 13:21:38,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,105 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,105 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,106 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,107 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,108 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,109 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,110 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,110 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,110 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,110 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,110 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,111 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,111 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,111 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,111 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,111 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,111 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,112 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,113 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:21:38,114 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:35,997 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:25:36,068 - code_agents - INFO - Initialized CodeAgentSystem with model codellama
+2025-03-15 13:25:36,074 - code_agents - INFO - Found 33 files to analyze in tools/samples/Hospital-Management-System-master
+2025-03-15 13:25:36,075 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,076 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,076 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,076 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,077 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,078 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,078 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,078 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,078 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,079 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,079 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,079 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,080 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,080 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,080 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,081 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,081 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,081 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,089 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,090 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,090 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,091 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,091 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,091 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,091 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,091 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,092 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,093 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,094 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,095 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:25:36,096 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,856 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:29:14,928 - code_agents - INFO - Initialized CodeAgentSystem with model codellama
+2025-03-15 13:29:14,934 - code_agents - INFO - Found 33 files to analyze in tools/samples/Hospital-Management-System-master
+2025-03-15 13:29:14,935 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,935 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,936 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,936 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,936 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,937 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,937 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,937 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,938 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,938 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,939 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,939 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,940 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,940 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,940 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,940 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,941 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,941 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,941 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,942 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,942 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,942 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,942 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,943 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,943 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,943 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,944 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,944 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,944 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,944 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,952 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,953 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,953 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/viewDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/updatePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Admin.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/searchPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/ReceptionistActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/DeletePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/viewPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/updateReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,954 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/patientActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/patientManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/patientDetails.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/addReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/doctorActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/chooseDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/searchDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/viewReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,955 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/addDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/choosePatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/deleteDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/deleteReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/hospital.sql: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Connector.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/newPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Receptionists/searchReceptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/Appointment.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Doctors/updateDoctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Patient/addPatient.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Receptionist.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,956 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Doctor.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:29:14,957 - code_agents - ERROR - Error processing tools/samples/Hospital-Management-System-master/src/Main/Hospital.java: 1 validation error for Task
+expected_output
+  Field required [type=missing, input_value={'description': 'Analyze ...ing complex codebases.)}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-15 13:31:26,236 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-15 13:31:26,308 - code_agents - INFO - Initialized CodeAgentSystem with model codellama
+2025-03-15 13:31:26,314 - code_agents - INFO - Found 33 files to analyze in tools/samples/Hospital-Management-System-master
+2025-03-15 13:31:26,341 - code_agents - INFO - Starting analysis of tools/samples/Hospital-Management-System-master/src/Admins/doctorManagement.java
+2025-03-15 13:31:26,342 - code_agents - INFO - Starting analysis of tools/samples/Hospital-Management-System-master/hospital.sql
+2025-03-15 13:31:26,347 - code_agents - INFO - Starting analysis of tools/samples/Hospital-Management-System-master/src/Admins/AdminActivity.java
+2025-03-15 13:31:26,349 - code_agents - INFO - Starting analysis of tools/samples/Hospital-Management-System-master/src/Admins/ReceptionistManagement.java
+2025-03-15 13:34:15,128 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-03-15 13:34:58,654 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-03-15 13:35:13,151 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-03-15 13:35:41,238 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-03-15 13:36:39,142 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
